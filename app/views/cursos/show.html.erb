@@ -30,14 +30,6 @@
          <%end%>
       </tr>
       <tr>
-        <td><b>Data e Horário:</b></td>
-         <%  if @curso.data_hora.nil? then %>
-             <td>00/00/00 - 0:00</td>
-         <%else%>
-            <td><%=h @curso.data_hora.strftime("%d de %B de %Y - %H:%M horas") %></td>
-         <%end%>
-      </tr>
-      <tr>
         <td><b>Ementa:</b></td>
         <td>  <%=h @curso.ementa %></td>
       </tr>

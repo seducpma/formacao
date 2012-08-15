@@ -7,6 +7,7 @@ class Curso < ActiveRecord::Base
   
 
   def before_save
+    self.vagas_disponiveis = self.qtde
     if self.nome.present?
       self.nome.upcase
     end

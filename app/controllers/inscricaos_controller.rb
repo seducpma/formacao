@@ -8,6 +8,21 @@ class InscricaosController < ApplicationController
     
     layout :define
 
+  def envia_email
+  end
+
+  def confirmacao
+    participante = Participante.find_by_matricula(params[:matricula])
+    @inscricao = Inscricao.find_by_participante_id(participante.id)
+    InscricaoMailer.deliver_confirmacao_inscricao(@inscricao,@inscricao.participante)
+
+  end
+
+  def kind
+    t = 0
+    y = 0
+  end
+
   def define
     if logged_in?
       'gerenciar'
@@ -77,6 +92,7 @@ class InscricaosController < ApplicationController
     @inscricao.data_inscricao = Time.now
     respond_to do |format|
       if @inscricao.save
+        @inscricao.valida_vaga
         flash[:notice] = 'INSCRIÇÃO CONFIRMADA COM SUCESSO.'
         InscricaoMailer.deliver_confirmacao_inscricao(@inscricao,@inscricao.participante)
         format.html { redirect_to(@inscricao) }

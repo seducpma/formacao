@@ -7,8 +7,6 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resource :session
 
-  map.resources :pesquisas
-
   map.resources :unidades
 
   map.resources :regiaos
@@ -19,7 +17,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :homes
 
-  map.resources :inscricaos, :collection => {:estatistica => :get, :voltarinscricao => :get, :tipo_opcao => :get, :por_curso => :get}
+  map.resources :inscricaos, :collection => {:confirmacao => :get,:envia_email => :get,:estatistica => :get, :voltarinscricao => :get, :tipo_opcao => :get, :por_curso => :get}
 
   map.resources :cursos, :collection => {:voltar => :get}
 

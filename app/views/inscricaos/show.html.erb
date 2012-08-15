@@ -27,19 +27,10 @@
                   <b><%=h curso.nome %></b>
                 </td>
               </tr>
-            <tr>
-              <td><%=h "Opção1: #{Unidade.find(@inscricao.opcao1).nome} - #{@inscricao.periodo_opcao1}" %></td>
-              <td><%=h "Opção2: #{Unidade.find(@inscricao.opcao2).nome} - #{@inscricao.periodo_opcao2}" %></td>
-            </tr>
           <% end %>
           <tr>
             <td colspan="2"><b>Inscrição efetuada em:</b>
               <%=h  @inscricao.data_inscricao.strftime("%d de %B de %Y") %> </td>
-          </tr>
-          <tr>
-            <td colspan="2">
-              <b>Você já está pré-inscrito nos módulos acima, a partir do momento que os mesmos forem efetivados, enviaremos uma notificação via e-mail. Todas estas informações foram enviadas ao email informado.</b>
-            </td>
           </tr>
        </table>
      </td>

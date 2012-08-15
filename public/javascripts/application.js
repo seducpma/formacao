@@ -12,12 +12,21 @@ function hide_field(link,div) {
   $(div).toggle();
 }
 
-function valor(){
-    alert('Teste JS interno');
-}
 
 $(document).ready(function()
 {
+
+//
+$("#type_of_2").click(function(){
+    alert("Teste2");
+});
+$("#type_of_1").click(function(){
+    $(".envia_geral").show()
+});
+
+
+$(".button").button();
+
 $("#inscricao_periodo_opcao2").focusout(function(){
 var periodo_opcao2 = $("#inscricao_periodo_opcao2").val(), periodo_opcao1 = $("#inscricao_periodo_opcao1").val();
 var opcao1 = $("#inscricao_opcao1").val(), opcao2 = $("#inscricao_opcao2").val()

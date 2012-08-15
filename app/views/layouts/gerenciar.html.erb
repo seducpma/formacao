@@ -5,8 +5,8 @@
   <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <title>Controle de Inscrições: <%= controller.action_name %></title>
-    <%= stylesheet_link_tag 'scaffold','treinamento','menu1',"modal" %>
-    <%= javascript_include_tag 'jquery-1.4.2.js','application.js','jquery.tools.min.js','jquery-ui','jrails' %>
+    <%= stylesheet_link_tag 'scaffold',"ui-lightness/jquery-ui-1.8.22.custom",'formacao','menu1',"modal" %>
+    <%= javascript_include_tag 'jquery-1.7.2.min.js','jquery.tools.min.js','jquery-ui-1.8.22.custom.min','jrails','application.js' %>
 
 </head>
 <body>
@@ -36,6 +36,11 @@
               <%= link_to 'Cursos', cursos_path %>
               <%= link_to "Cadastrados", participantes_path %>
            </div>
+           <p class="menu_head">Arquivo</p>
+           <div class="menu_body">
+              <%= link_to 'Home', root_path %>
+              <%= link_to "Sair", homes_path %>
+           </div>
            <%else%>
             <p class="menu_head">Administrador</p>
             <div class="menu_body">
@@ -47,18 +52,11 @@
               <%= link_to "Prefeitura", "http://www.americana.sp.gov.br" %>
             </div>
            <%end%>
-      </div>  <!--Code for menu ends here-->
-    <div id="left_down"><%= render "shared/show_results", :collection => @faq %></div>
+      </div>  <!--Code for menu ends here-->    
   </div>
 <div style="clear: both;"> </div>
 </div>
 </div>
-
-
-
-
-
-
 </body>
 </html>
 

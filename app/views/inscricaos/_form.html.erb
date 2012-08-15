@@ -37,21 +37,6 @@
         <th colspan="2" style=" font-size: large; color: blue">* Para maiores informações sobre os cursos, posicione o mouse sobre as caixas de opção</th>
       </tr>
   </table>
-
-  <p>
-    <fieldset><legend>Opção de unidades</legend>
-      <b>Opção 1</b>
-      <%= f.collection_select :opcao1, @locais, :id, :nome, :include_blank => ' -- Selecione -- ' %>
-      <b>Turno</b>
-      <%= f.select :periodo_opcao1, options_for_select(Inscricao::Periodo), :include_blank => "" %><br/>
-
-      <b>Opção 2</b>
-      <%= f.collection_select :opcao2, @locais, :id, :nome, :include_blank => ' -- Selecione -- ' %>
-      <b>Turno</b>
-      <%= f.select :periodo_opcao2, options_for_select(Inscricao::Periodo), :include_blank => "" %><br/>
-    </fieldset>
-  </p>
-
   <p>
     <div id="final"><%= f.submit "Confirmar suas opções"  %></div>
   </p>

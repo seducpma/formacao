@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120806181454) do
+ActiveRecord::Schema.define(:version => 20120815130827) do
 
   create_table "cursos", :force => true do |t|
     t.string   "nome_curto"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(:version => 20120806181454) do
     t.datetime "data_hora"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "qtde"
+    t.integer  "vagas_disponiveis"
   end
 
   create_table "cursos_inscricaos", :id => false, :force => true do |t|
@@ -31,13 +33,8 @@ ActiveRecord::Schema.define(:version => 20120806181454) do
   create_table "inscricaos", :force => true do |t|
     t.integer  "participante_id", :null => false
     t.date     "data_inscricao"
-    t.string   "inscrito"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "opcao1"
-    t.integer  "opcao2"
-    t.string   "periodo_opcao1"
-    t.string   "periodo_opcao2"
   end
 
   create_table "participantes", :force => true do |t|
@@ -59,28 +56,8 @@ ActiveRecord::Schema.define(:version => 20120806181454) do
     t.integer  "tipo_participante"
   end
 
-  create_table "perguntas", :force => true do |t|
-    t.integer  "pesquisa_id"
-    t.text     "conteudo"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "pesquisas", :force => true do |t|
-    t.string   "nome"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "regiaos", :force => true do |t|
     t.string   "nome"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "respostas", :force => true do |t|
-    t.integer  "pergunta_id"
-    t.string   "conteudo"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

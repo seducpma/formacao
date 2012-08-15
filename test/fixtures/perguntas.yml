@@ -1,9 +1,0 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-one:
-  pesquisa_id: 1
-  conteudo: MyText
-
-two:
-  pesquisa_id: 1
-  conteudo: MyText

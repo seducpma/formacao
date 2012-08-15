@@ -3,28 +3,39 @@ class Inscricao < ActiveRecord::Base
   belongs_to :participante, :dependent => :destroy
   #belongs_to :opcao1, :class_name => 'Unidade', :foreign_key => "opcao1"
   #belongs_to :opcao2, :class_name => 'Unidade', :foreign_key => "opcao2"
+  validates_presence_of :existe_vaga?, :message => "Não existe mais vagas dispiveis a este curso"
   has_and_belongs_to_many :cursos
   accepts_nested_attributes_for :participante
   validates_presence_of :participante_id
-  validates_presence_of :opcao1, :if => :verifica_opcao
-  validates_presence_of :opcao2, :if => :verifica_opcao2
   validates_uniqueness_of :participante_id, :message => " Error => Este participante já efetuou a inscrição"
+  attr_accessor :vagas
   Periodo = %w(Matutino Vespertino Noturno Sabado_Matutino)
 
 
-  def verifica_opcao
-    if self.opcao1 == ""
-      true
-    else
-      false
+
+
+  def existe_vaga?
+    cursos = self.cursos
+    cursos.each do |curso|
+      course = Curso.find(curso)
+      t = course.vagas_disponiveis
+      course.vagas_disponiveis <= 0 ? false : true
+      if course.vagas_disponiveis <= 0 ? true : false
+        errors.add(:vagas,"Vagas indisponíveispara o curso #{course.nome_curto}")
+      end
     end
-  end
-    def verifica_opcao2
-    if self.opcao2 == ""
-      true
-    else
-      false
-    end
+
+
   end
 
+  def valida_vaga
+    cursos = self.cursos
+    cursos.each do |curso|
+      course = Curso.find(curso)
+      if course.vagas_disponiveis > 0
+        course.vagas_disponiveis = course.vagas_disponiveis - 1
+      end
+      course.save
+    end
+  end
 end

@@ -17,7 +17,7 @@
 development:
   adapter: mysql
   encoding: utf8
-  database: treinamento_development
+  database: formacao_development
   pool: 5
   username: root
   password: s3inf0
@@ -29,7 +29,7 @@ development:
 test:
   adapter: mysql
   encoding: utf8
-  database: treinamento_test
+  database: formacao_test
   pool: 5
   username: root
   password: s3inf0
@@ -38,7 +38,7 @@ test:
 production:
   adapter: mysql
   encoding: utf8
-  database: treinamento_production
+  database: formacao_production
   pool: 5
   username: root
   password: s3inf05
