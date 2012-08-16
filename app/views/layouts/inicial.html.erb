@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <title>Cursos de formação: </title>
-    <%= stylesheet_link_tag 'scaffold',"pepper-grinder/jquery-ui-1.8.22.custom",'formacao','menu1' %>
+    <%= stylesheet_link_tag "pepper-grinder/jquery-ui-1.8.22.custom",'formacao','menu1' %>
         <%= javascript_include_tag 'jquery-1.7.2.min.js','jquery.tools.min.js','jquery-ui-1.8.22.custom.min','jrails','application.js' %>
 
 </head>
@@ -36,13 +36,14 @@
            <p class="menu_head">Arquivo</p>
            <div class="menu_body">
               <%= link_to 'Home', root_path %>
-              <%= link_to "Sair", homes_path %>
+              <%= link_to "Sair", logout_path %>
            </div>
 
            <%else%>
             <p class="menu_head">Administrador</p>
             <div class="menu_body">
               <%= link_to 'Acessar', login_path%>
+              <%= link_to 'Cadastrar usuários',new_user_path %>
             </div>
             <p class="menu_divisor"></p>
             <p class="menu_head">Links Externos</p>
