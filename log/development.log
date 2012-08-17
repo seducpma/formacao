@@ -25979,3 +25979,1338 @@ Rendering inscricaos/show
   [4;35;1mCurso Load (0.5ms)[0m   [0mSELECT * FROM `cursos` INNER JOIN `cursos_inscricaos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (`cursos_inscricaos`.inscricao_id = 16 ) [0m
   [4;36;1mCurso Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `cursos`[0m
 Completed in 283ms (View: 60, DB: 14) | 200 OK [http://localhost/inscricaos/16]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#index (for 127.0.0.1 at 2012-08-17 14:33:39) [GET]
+Rendering template within layouts/inicial
+Rendering homes/index
+Completed in 18ms (View: 11, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#new (for 127.0.0.1 at 2012-08-17 14:33:41) [GET]
+  [4;35;1mCurso Load (0.6ms)[0m   [0mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;36;1mParticipante Load (0.2ms)[0m   [0;1mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;35;1mInscricao Load (0.4ms)[0m   [0mSELECT * FROM `inscricaos` [0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;35;1mInscricao Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `inscricaos`[0m
+  [4;36;1mInscricao Load (0.3ms)[0m   [0;1mSELECT * FROM `inscricaos` WHERE (`inscricaos`.`participante_id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/cadastral
+Rendering inscricaos/new
+  [4;35;1mParticipante Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `participantes`[0m
+  [4;36;1mCurso Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `cursos`[0m
+  [4;35;1mCurso Load (0.5ms)[0m   [0mSELECT `cursos`.id FROM `cursos` INNER JOIN `cursos_inscricaos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (`cursos`.`id` = 4) AND (`cursos_inscricaos`.inscricao_id = NULL ) LIMIT 1[0m
+  [4;36;1mCurso Load (0.3ms)[0m   [0;1mSELECT `cursos`.id FROM `cursos` INNER JOIN `cursos_inscricaos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (`cursos`.`id` = 5) AND (`cursos_inscricaos`.inscricao_id = NULL ) LIMIT 1[0m
+  [4;35;1mCurso Load (0.5ms)[0m   [0mSELECT `cursos`.id FROM `cursos` INNER JOIN `cursos_inscricaos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (`cursos`.`id` = 6) AND (`cursos_inscricaos`.inscricao_id = NULL ) LIMIT 1[0m
+Rendered inscricaos/_form (49.6ms)
+Completed in 124ms (View: 56, DB: 8) | 200 OK [http://localhost/inscricaos/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#create (for 127.0.0.1 at 2012-08-17 14:33:45) [POST]
+  Parameters: {"inscricao"=>{"participante_id"=>"", "curso_ids"=>["4", "5", "6"]}, "authenticity_token"=>"n0915dZB3U6igEglzg16cKfXIp6tkGaS/gB/LEJhE2Q=", "commit"=>"Confirmar suas opções"}
+  [4;36;1mCurso Load (0.2ms)[0m   [0;1mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;35;1mParticipante Load (0.2ms)[0m   [0mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;36;1mInscricao Load (0.2ms)[0m   [0;1mSELECT * FROM `inscricaos` [0m
+  [4;35;1mUnidade Load (0.2ms)[0m   [0mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;36;1mInscricao Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `inscricaos`[0m
+  [4;35;1mCurso Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `cursos`[0m
+  [4;36;1mCurso Load (0.5ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` IN (4,5,6)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mCurso Load (0.4ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 4) [0m
+  [4;35;1mCurso Load (0.3ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 5) [0m
+  [4;36;1mCurso Load (0.3ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 6) [0m
+  [4;35;1mInscricao Load (0.2ms)[0m   [0mSELECT `inscricaos`.id FROM `inscricaos` WHERE (`inscricaos`.`participante_id` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/cadastral
+Rendering inscricaos/new
+  [4;35;1mParticipante Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `participantes`[0m
+Rendered inscricaos/_form (54.1ms)
+Completed in 157ms (View: 61, DB: 8) | 200 OK [http://localhost/inscricaos]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#sel_participa (for 127.0.0.1 at 2012-08-17 14:33:51) [POST]
+  Parameters: {"authenticity_token"=>"n0915dZB3U6igEglzg16cKfXIp6tkGaS/gB/LEJhE2Q=", "inscricao_participante_id"=>"1"}
+  [4;36;1mCurso Load (0.2ms)[0m   [0;1mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;35;1mParticipante Load (0.2ms)[0m   [0mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;36;1mInscricao Load (0.2ms)[0m   [0;1mSELECT * FROM `inscricaos` [0m
+  [4;35;1mUnidade Load (0.2ms)[0m   [0mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;36;1mParticipante Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `participantes`[0m
+  [4;35;1mParticipante Load (0.2ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1) [0m
+Rendered inscricaos/_exibe_participante (11.4ms)
+Completed in 81ms (View: 16, DB: 3) | 200 OK [http://localhost/inscricaos/sel_participa]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#create (for 127.0.0.1 at 2012-08-17 14:34:17) [POST]
+  Parameters: {"inscricao"=>{"participante_id"=>"1", "curso_ids"=>["6"]}, "authenticity_token"=>"n0915dZB3U6igEglzg16cKfXIp6tkGaS/gB/LEJhE2Q=", "commit"=>"Confirmar"}
+  [4;36;1mCurso Load (0.2ms)[0m   [0;1mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;35;1mParticipante Load (0.2ms)[0m   [0mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;36;1mInscricao Load (0.1ms)[0m   [0;1mSELECT * FROM `inscricaos` [0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;36;1mInscricao Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `inscricaos`[0m
+  [4;35;1mCurso Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `cursos`[0m
+  [4;36;1mCurso Load (0.5ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 6) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 6) [0m
+  [4;35;1mInscricao Load (0.3ms)[0m   [0mSELECT `inscricaos`.id FROM `inscricaos` WHERE (`inscricaos`.`participante_id` = 1) LIMIT 1[0m
+  [4;36;1mInscricao Create (0.3ms)[0m   [0;1mINSERT INTO `inscricaos` (`created_at`, `updated_at`, `participante_id`, `data_inscricao`) VALUES('2012-08-17 17:34:17', '2012-08-17 17:34:17', 1, '2012-08-17 14:34:17')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mdescribe `cursos_inscricaos`[0m
+  [4;36;1mcursos_inscricaos Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `cursos_inscricaos`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO `cursos_inscricaos` (`inscricao_id`, `curso_id`) VALUES (17, 6)[0m
+  [4;36;1mSQL (113.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mCurso Load (0.2ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 6) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCurso Update (0.5ms)[0m   [0mUPDATE `cursos` SET `vagas_disponiveis` = 0, `updated_at` = '2012-08-17 17:34:17' WHERE `id` = 6[0m
+  [4;36;1mSQL (40.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mParticipante Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `participantes`[0m
+  [4;36;1mParticipante Load (0.2ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1) [0m
+Sent mail to alexandre@seducpma.com
+
+Date: Fri, 17 Aug 2012 14:34:17 -0300
+From: informatica@seducpma.com
+To: alexandre@seducpma.com
+Subject: Texto
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+
+<p>
+<h1>Parabéns A</h1>
+<b>Sua inscrição nos modulos de treinamento foi efetuada com sucesso.</b>
+<b>Inscricao nº: 17</b><br/>
+<b>
+  Você esta inscrito nos seguintes módulos
+  <ul>
+    
+        <li>c</li>
+    
+  </ul>
+
+  <h2>Agradecemos por sua inscrição</h2>
+  <h2>Equipe de Formação - SEDUC</h2>
+  <h2>Prefeitura de Americana</h2>
+</b>
+</p>
+Redirected to http://localhost:3001/inscricaos/17
+Completed in 3654ms (DB: 163) | 302 Found [http://localhost/inscricaos]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#show (for 127.0.0.1 at 2012-08-17 14:34:21) [GET]
+  Parameters: {"id"=>"17"}
+  [4;35;1mCurso Load (0.8ms)[0m   [0mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;36;1mParticipante Load (0.2ms)[0m   [0;1mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;35;1mInscricao Load (0.5ms)[0m   [0mSELECT * FROM `inscricaos` [0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;35;1mInscricao Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `inscricaos`[0m
+  [4;36;1mInscricao Load (0.4ms)[0m   [0;1mSELECT * FROM `inscricaos` WHERE (`inscricaos`.`id` = 17) [0m
+Rendering template within layouts/cadastral
+Rendering inscricaos/show
+  [4;35;1mParticipante Columns (3.4ms)[0m   [0mSHOW FIELDS FROM `participantes`[0m
+  [4;36;1mParticipante Load (0.2ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1) [0m
+  [4;35;1mcursos_inscricaos Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `cursos_inscricaos`[0m
+  [4;36;1mCurso Load (0.5ms)[0m   [0;1mSELECT * FROM `cursos` INNER JOIN `cursos_inscricaos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (`cursos_inscricaos`.inscricao_id = 17 ) [0m
+  [4;35;1mCurso Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `cursos`[0m
+Completed in 120ms (View: 39, DB: 11) | 200 OK [http://localhost/inscricaos/17]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#new (for 127.0.0.1 at 2012-08-17 14:38:32) [GET]
+  [4;36;1mCurso Load (0.7ms)[0m   [0;1mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;35;1mParticipante Load (28.9ms)[0m   [0mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;36;1mInscricao Load (0.4ms)[0m   [0;1mSELECT * FROM `inscricaos` [0m
+  [4;35;1mUnidade Load (0.5ms)[0m   [0mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;36;1mInscricao Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `inscricaos`[0m
+  [4;35;1mInscricao Load (0.2ms)[0m   [0mSELECT * FROM `inscricaos` WHERE (`inscricaos`.`participante_id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/cadastral
+Rendering inscricaos/new
+  [4;36;1mParticipante Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `participantes`[0m
+  [4;35;1mCurso Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `cursos`[0m
+  [4;36;1mCurso Load (0.4ms)[0m   [0;1mSELECT `cursos`.id FROM `cursos` INNER JOIN `cursos_inscricaos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (`cursos`.`id` = 3) AND (`cursos_inscricaos`.inscricao_id = NULL ) LIMIT 1[0m
+  [4;35;1mCurso Load (0.3ms)[0m   [0mSELECT `cursos`.id FROM `cursos` INNER JOIN `cursos_inscricaos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (`cursos`.`id` = 2) AND (`cursos_inscricaos`.inscricao_id = NULL ) LIMIT 1[0m
+  [4;36;1mCurso Load (0.3ms)[0m   [0;1mSELECT `cursos`.id FROM `cursos` INNER JOIN `cursos_inscricaos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (`cursos`.`id` = 1) AND (`cursos_inscricaos`.inscricao_id = NULL ) LIMIT 1[0m
+Rendered inscricaos/_form (102.8ms)
+Completed in 328ms (View: 107, DB: 36) | 200 OK [http://localhost/inscricaos/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#sel_participa (for 127.0.0.1 at 2012-08-17 14:38:39) [POST]
+  Parameters: {"authenticity_token"=>"n0915dZB3U6igEglzg16cKfXIp6tkGaS/gB/LEJhE2Q=", "inscricao_participante_id"=>"1081"}
+  [4;35;1mCurso Load (0.2ms)[0m   [0mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;36;1mParticipante Load (2.2ms)[0m   [0;1mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;35;1mInscricao Load (0.2ms)[0m   [0mSELECT * FROM `inscricaos` [0m
+  [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;35;1mParticipante Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `participantes`[0m
+  [4;36;1mParticipante Load (0.3ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1081) [0m
+Rendered inscricaos/_exibe_participante (7.0ms)
+Completed in 118ms (View: 10, DB: 5) | 200 OK [http://localhost/inscricaos/sel_participa]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#create (for 127.0.0.1 at 2012-08-17 14:39:03) [POST]
+  Parameters: {"inscricao"=>{"participante_id"=>"1081", "curso_ids"=>["3", "2", "1"]}, "authenticity_token"=>"n0915dZB3U6igEglzg16cKfXIp6tkGaS/gB/LEJhE2Q=", "commit"=>"Confirmar"}
+  [4;35;1mCurso Load (0.2ms)[0m   [0mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;36;1mParticipante Load (1.6ms)[0m   [0;1mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;35;1mInscricao Load (0.3ms)[0m   [0mSELECT * FROM `inscricaos` [0m
+  [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;35;1mInscricao Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `inscricaos`[0m
+  [4;36;1mCurso Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `cursos`[0m
+  [4;35;1mCurso Load (0.4ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` IN (3,2,1)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCurso Load (0.3ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 3) [0m
+  [4;36;1mCurso Load (0.2ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 2) [0m
+  [4;35;1mCurso Load (0.2ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 1) [0m
+  [4;36;1mInscricao Load (0.2ms)[0m   [0;1mSELECT `inscricaos`.id FROM `inscricaos` WHERE (`inscricaos`.`participante_id` = 1081) LIMIT 1[0m
+  [4;35;1mInscricao Create (0.3ms)[0m   [0mINSERT INTO `inscricaos` (`created_at`, `updated_at`, `participante_id`, `data_inscricao`) VALUES('2012-08-17 17:39:03', '2012-08-17 17:39:03', 1081, '2012-08-17 14:39:03')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mdescribe `cursos_inscricaos`[0m
+  [4;35;1mcursos_inscricaos Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `cursos_inscricaos`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO `cursos_inscricaos` (`inscricao_id`, `curso_id`) VALUES (3, 3)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `cursos_inscricaos`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO `cursos_inscricaos` (`inscricao_id`, `curso_id`) VALUES (3, 2)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `cursos_inscricaos`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO `cursos_inscricaos` (`inscricao_id`, `curso_id`) VALUES (3, 1)[0m
+  [4;35;1mSQL (112.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mCurso Load (0.5ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 3) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mCurso Update (0.4ms)[0m   [0;1mUPDATE `cursos` SET `vagas_disponiveis` = 35, `updated_at` = '2012-08-17 17:39:03' WHERE `id` = 3[0m
+  [4;35;1mSQL (75.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mCurso Load (0.4ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 2) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mCurso Update (0.3ms)[0m   [0;1mUPDATE `cursos` SET `vagas_disponiveis` = 35, `updated_at` = '2012-08-17 17:39:03' WHERE `id` = 2[0m
+  [4;35;1mSQL (42.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mCurso Load (0.5ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mROLLBACK[0m
+
+ActiveRecord::RecordInvalid (translation missing: pt-BR, activerecord, errors, messages, record_invalid):
+  app/models/inscricao.rb:38:in `valida_vaga'
+  /usr/lib/ruby/gems/1.8/gems/will_paginate-2.3.15/lib/will_paginate/finder.rb:168:in `method_missing'
+  /usr/lib/ruby/gems/1.8/gems/will_paginate-2.3.15/lib/will_paginate/finder.rb:168:in `method_missing'
+  app/models/inscricao.rb:32:in `valida_vaga'
+  app/controllers/inscricaos_controller.rb:95:in `create'
+  app/controllers/inscricaos_controller.rb:93:in `create'
+  /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.9/lib/ruby-debug-ide.rb:109:in `debug_load'
+  /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.9/lib/ruby-debug-ide.rb:109:in `debug_program'
+  /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.9/bin/rdebug-ide:87
+  /usr/bin/rdebug-ide:19:in `load'
+  /usr/bin/rdebug-ide:19
+
+Rendered rescues/_trace (140.2ms)
+Rendered rescues/_request_and_response (3.0ms)
+Rendering rescues/layout (unprocessable_entity)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#create (for 127.0.0.1 at 2012-08-17 14:40:31) [POST]
+  Parameters: {"inscricao"=>{"participante_id"=>"1081", "curso_ids"=>["3", "2", "1"]}, "authenticity_token"=>"n0915dZB3U6igEglzg16cKfXIp6tkGaS/gB/LEJhE2Q=", "commit"=>"Confirmar"}
+  [4;35;1mCurso Load (0.6ms)[0m   [0mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;36;1mParticipante Load (3.0ms)[0m   [0;1mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;35;1mInscricao Load (0.4ms)[0m   [0mSELECT * FROM `inscricaos` [0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;35;1mInscricao Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `inscricaos`[0m
+  [4;36;1mCurso Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `cursos`[0m
+  [4;35;1mCurso Load (0.5ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` IN (3,2,1)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCurso Load (0.3ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 3) [0m
+  [4;36;1mCurso Load (0.7ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 2) [0m
+  [4;35;1mCurso Load (0.5ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 1) [0m
+  [4;36;1mInscricao Load (0.4ms)[0m   [0;1mSELECT `inscricaos`.id FROM `inscricaos` WHERE (`inscricaos`.`participante_id` = 1081) LIMIT 1[0m
+  [4;35;1mInscricao Create (0.4ms)[0m   [0mINSERT INTO `inscricaos` (`created_at`, `updated_at`, `participante_id`, `data_inscricao`) VALUES('2012-08-17 17:40:32', '2012-08-17 17:40:32', 1081, '2012-08-17 14:40:31')[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mdescribe `cursos_inscricaos`[0m
+  [4;35;1mcursos_inscricaos Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `cursos_inscricaos`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO `cursos_inscricaos` (`inscricao_id`, `curso_id`) VALUES (4, 3)[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mdescribe `cursos_inscricaos`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO `cursos_inscricaos` (`inscricao_id`, `curso_id`) VALUES (4, 2)[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mdescribe `cursos_inscricaos`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO `cursos_inscricaos` (`inscricao_id`, `curso_id`) VALUES (4, 1)[0m
+  [4;35;1mSQL (61.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mCurso Load (0.5ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 3) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mCurso Update (0.4ms)[0m   [0;1mUPDATE `cursos` SET `vagas_disponiveis` = 34, `updated_at` = '2012-08-17 17:40:32' WHERE `id` = 3[0m
+  [4;35;1mSQL (41.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mCurso Load (0.4ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 2) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mCurso Update (0.3ms)[0m   [0;1mUPDATE `cursos` SET `vagas_disponiveis` = 34, `updated_at` = '2012-08-17 17:40:32' WHERE `id` = 2[0m
+  [4;35;1mSQL (41.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mCurso Load (0.5ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mROLLBACK[0m
+
+ActiveRecord::RecordInvalid (translation missing: pt-BR, activerecord, errors, messages, record_invalid):
+  app/models/inscricao.rb:40:in `valida_vaga'
+  /usr/lib/ruby/gems/1.8/gems/will_paginate-2.3.15/lib/will_paginate/finder.rb:168:in `method_missing'
+  /usr/lib/ruby/gems/1.8/gems/will_paginate-2.3.15/lib/will_paginate/finder.rb:168:in `method_missing'
+  app/models/inscricao.rb:34:in `valida_vaga'
+  app/controllers/inscricaos_controller.rb:95:in `create'
+  app/controllers/inscricaos_controller.rb:93:in `create'
+  /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.9/lib/ruby-debug-ide.rb:109:in `debug_load'
+  /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.9/lib/ruby-debug-ide.rb:109:in `debug_program'
+  /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.9/bin/rdebug-ide:87
+  /usr/bin/rdebug-ide:19:in `load'
+  /usr/bin/rdebug-ide:19
+
+Rendered rescues/_trace (176.4ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (unprocessable_entity)
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#create (for 127.0.0.1 at 2012-08-17 14:41:02) [POST]
+  Parameters: {"inscricao"=>{"participante_id"=>"1081", "curso_ids"=>["3", "2", "1"]}, "authenticity_token"=>"n0915dZB3U6igEglzg16cKfXIp6tkGaS/gB/LEJhE2Q=", "commit"=>"Confirmar"}
+  [4;35;1mCurso Load (0.5ms)[0m   [0mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;36;1mParticipante Load (1.9ms)[0m   [0;1mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;35;1mInscricao Load (0.3ms)[0m   [0mSELECT * FROM `inscricaos` [0m
+  [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;35;1mInscricao Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `inscricaos`[0m
+  [4;36;1mCurso Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `cursos`[0m
+  [4;35;1mCurso Load (0.4ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` IN (3,2,1)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCurso Load (1.1ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 3) [0m
+  [4;36;1mCurso Load (0.5ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 2) [0m
+  [4;35;1mCurso Load (1.4ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 1) [0m
+  [4;36;1mInscricao Load (0.5ms)[0m   [0;1mSELECT `inscricaos`.id FROM `inscricaos` WHERE (`inscricaos`.`participante_id` = 1081) LIMIT 1[0m
+  [4;35;1mInscricao Create (0.3ms)[0m   [0mINSERT INTO `inscricaos` (`created_at`, `updated_at`, `participante_id`, `data_inscricao`) VALUES('2012-08-17 17:41:07', '2012-08-17 17:41:07', 1081, '2012-08-17 14:41:02')[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mdescribe `cursos_inscricaos`[0m
+  [4;35;1mcursos_inscricaos Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `cursos_inscricaos`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO `cursos_inscricaos` (`inscricao_id`, `curso_id`) VALUES (5, 3)[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mdescribe `cursos_inscricaos`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO `cursos_inscricaos` (`inscricao_id`, `curso_id`) VALUES (5, 2)[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mdescribe `cursos_inscricaos`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO `cursos_inscricaos` (`inscricao_id`, `curso_id`) VALUES (5, 1)[0m
+  [4;35;1mSQL (59.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mCurso Load (0.5ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 3) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mCurso Update (10.2ms)[0m   [0;1mUPDATE `cursos` SET `vagas_disponiveis` = 33, `updated_at` = '2012-08-17 17:41:07' WHERE `id` = 3[0m
+  [4;35;1mSQL (54.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mCurso Load (0.6ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 2) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mCurso Update (2.0ms)[0m   [0;1mUPDATE `cursos` SET `vagas_disponiveis` = 33, `updated_at` = '2012-08-17 17:41:08' WHERE `id` = 2[0m
+  [4;35;1mSQL (74.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mCurso Load (0.7ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+
+ActiveRecord::RecordInvalid (translation missing: pt-BR, activerecord, errors, messages, record_invalid):
+  app/models/inscricao.rb:40:in `valida_vaga'
+  /usr/lib/ruby/gems/1.8/gems/will_paginate-2.3.15/lib/will_paginate/finder.rb:168:in `method_missing'
+  /usr/lib/ruby/gems/1.8/gems/will_paginate-2.3.15/lib/will_paginate/finder.rb:168:in `method_missing'
+  app/models/inscricao.rb:34:in `valida_vaga'
+  app/controllers/inscricaos_controller.rb:95:in `create'
+  app/controllers/inscricaos_controller.rb:93:in `create'
+  /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.9/lib/ruby-debug-ide.rb:109:in `debug_load'
+  /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.9/lib/ruby-debug-ide.rb:109:in `debug_program'
+  /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.9/bin/rdebug-ide:87
+  /usr/bin/rdebug-ide:19:in `load'
+  /usr/bin/rdebug-ide:19
+
+Rendered rescues/_trace (192.7ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (unprocessable_entity)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#index (for 127.0.0.1 at 2012-08-17 14:41:37) [GET]
+Rendering template within layouts/inicial
+Rendering homes/index
+Completed in 72ms (View: 66, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#create (for 127.0.0.1 at 2012-08-17 14:41:44) [POST]
+  Parameters: {"inscricao"=>{"participante_id"=>"1081", "curso_ids"=>["3", "2", "1"]}, "authenticity_token"=>"n0915dZB3U6igEglzg16cKfXIp6tkGaS/gB/LEJhE2Q=", "commit"=>"Confirmar"}
+  [4;36;1mCurso Load (0.7ms)[0m   [0;1mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;35;1mParticipante Load (2.7ms)[0m   [0mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;36;1mInscricao Load (0.4ms)[0m   [0;1mSELECT * FROM `inscricaos` [0m
+  [4;35;1mUnidade Load (0.2ms)[0m   [0mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;36;1mInscricao Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `inscricaos`[0m
+  [4;35;1mCurso Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `cursos`[0m
+  [4;36;1mCurso Load (0.4ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` IN (3,2,1)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mCurso Load (0.5ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 3) [0m
+  [4;35;1mCurso Load (0.7ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 2) [0m
+  [4;36;1mCurso Load (0.6ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 1) [0m
+  [4;35;1mInscricao Load (0.6ms)[0m   [0mSELECT `inscricaos`.id FROM `inscricaos` WHERE (`inscricaos`.`participante_id` = 1081) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/cadastral
+Rendering inscricaos/new
+  [4;35;1mParticipante Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `participantes`[0m
+Rendered inscricaos/_form (183.2ms)
+Completed in 59955ms (View: 225, DB: 12) | 200 OK [http://localhost/inscricaos]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#create (for 127.0.0.1 at 2012-08-17 14:44:19) [POST]
+  Parameters: {"inscricao"=>{"participante_id"=>"1081", "curso_ids"=>["3", "2", "1"]}, "authenticity_token"=>"n0915dZB3U6igEglzg16cKfXIp6tkGaS/gB/LEJhE2Q=", "commit"=>"Confirmar"}
+  [4;36;1mCurso Load (0.2ms)[0m   [0;1mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;35;1mParticipante Load (2.1ms)[0m   [0mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;36;1mInscricao Load (0.4ms)[0m   [0;1mSELECT * FROM `inscricaos` [0m
+  [4;35;1mUnidade Load (0.2ms)[0m   [0mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;36;1mInscricao Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `inscricaos`[0m
+  [4;35;1mCurso Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `cursos`[0m
+  [4;36;1mCurso Load (0.1ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` IN (3,2,1)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mCurso Load (0.2ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 3) [0m
+  [4;35;1mCurso Load (0.1ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 2) [0m
+  [4;36;1mCurso Load (0.1ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 1) [0m
+  [4;35;1mInscricao Load (0.4ms)[0m   [0mSELECT `inscricaos`.id FROM `inscricaos` WHERE (`inscricaos`.`participante_id` = 1081) LIMIT 1[0m
+  [4;36;1mInscricao Create (0.4ms)[0m   [0;1mINSERT INTO `inscricaos` (`created_at`, `data_inscricao`, `participante_id`, `updated_at`) VALUES('2012-08-17 17:44:19', '2012-08-17 14:44:19', 1081, '2012-08-17 17:44:19')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mdescribe `cursos_inscricaos`[0m
+  [4;36;1mcursos_inscricaos Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `cursos_inscricaos`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO `cursos_inscricaos` (`inscricao_id`, `curso_id`) VALUES (6, 3)[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mdescribe `cursos_inscricaos`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO `cursos_inscricaos` (`inscricao_id`, `curso_id`) VALUES (6, 2)[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mdescribe `cursos_inscricaos`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO `cursos_inscricaos` (`inscricao_id`, `curso_id`) VALUES (6, 1)[0m
+  [4;36;1mSQL (85.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mCurso Load (0.5ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 3) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCurso Update (0.4ms)[0m   [0mUPDATE `cursos` SET `updated_at` = '2012-08-17 17:44:19', `vagas_disponiveis` = 32 WHERE `id` = 3[0m
+  [4;36;1mSQL (41.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mCurso Load (0.5ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 2) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCurso Update (0.4ms)[0m   [0mUPDATE `cursos` SET `updated_at` = '2012-08-17 17:44:19', `vagas_disponiveis` = 32 WHERE `id` = 2[0m
+  [4;36;1mSQL (40.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mCurso Load (0.5ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+
+ActiveRecord::RecordInvalid (translation missing: pt-BR, activerecord, errors, messages, record_invalid):
+  app/models/inscricao.rb:40:in `valida_vaga'
+  /usr/lib/ruby/gems/1.8/gems/will_paginate-2.3.15/lib/will_paginate/finder.rb:168:in `method_missing'
+  /usr/lib/ruby/gems/1.8/gems/will_paginate-2.3.15/lib/will_paginate/finder.rb:168:in `method_missing'
+  app/models/inscricao.rb:34:in `valida_vaga'
+  app/controllers/inscricaos_controller.rb:95:in `create'
+  app/controllers/inscricaos_controller.rb:93:in `create'
+  /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.9/lib/ruby-debug-ide.rb:109:in `debug_load'
+  /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.9/lib/ruby-debug-ide.rb:109:in `debug_program'
+  /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.9/bin/rdebug-ide:87
+  /usr/bin/rdebug-ide:19:in `load'
+  /usr/bin/rdebug-ide:19
+
+Rendered rescues/_trace (170.5ms)
+Rendered rescues/_request_and_response (2.9ms)
+Rendering rescues/layout (unprocessable_entity)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#create (for 127.0.0.1 at 2012-08-17 14:45:26) [POST]
+  Parameters: {"inscricao"=>{"participante_id"=>"1081", "curso_ids"=>["3", "2", "1"]}, "authenticity_token"=>"n0915dZB3U6igEglzg16cKfXIp6tkGaS/gB/LEJhE2Q=", "commit"=>"Confirmar"}
+  [4;36;1mCurso Load (0.8ms)[0m   [0;1mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;35;1mParticipante Load (2.3ms)[0m   [0mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;36;1mInscricao Load (0.6ms)[0m   [0;1mSELECT * FROM `inscricaos` [0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;36;1mInscricao Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `inscricaos`[0m
+  [4;35;1mCurso Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `cursos`[0m
+  [4;36;1mCurso Load (0.4ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` IN (3,2,1)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mCurso Load (0.4ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 3) [0m
+  [4;35;1mCurso Load (0.2ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 2) [0m
+  [4;36;1mCurso Load (0.2ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 1) [0m
+  [4;35;1mInscricao Load (0.2ms)[0m   [0mSELECT `inscricaos`.id FROM `inscricaos` WHERE (`inscricaos`.`participante_id` = 1081) LIMIT 1[0m
+  [4;36;1mInscricao Create (0.3ms)[0m   [0;1mINSERT INTO `inscricaos` (`created_at`, `data_inscricao`, `participante_id`, `updated_at`) VALUES('2012-08-17 17:45:26', '2012-08-17 14:45:26', 1081, '2012-08-17 17:45:26')[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `cursos_inscricaos`[0m
+  [4;36;1mcursos_inscricaos Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `cursos_inscricaos`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO `cursos_inscricaos` (`inscricao_id`, `curso_id`) VALUES (7, 3)[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `cursos_inscricaos`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO `cursos_inscricaos` (`inscricao_id`, `curso_id`) VALUES (7, 2)[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `cursos_inscricaos`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO `cursos_inscricaos` (`inscricao_id`, `curso_id`) VALUES (7, 1)[0m
+  [4;36;1mSQL (124.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mCurso Load (0.7ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 3) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCurso Update (0.4ms)[0m   [0mUPDATE `cursos` SET `updated_at` = '2012-08-17 17:45:26', `vagas_disponiveis` = 31 WHERE `id` = 3[0m
+  [4;36;1mSQL (39.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mCurso Load (0.5ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 2) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCurso Update (0.4ms)[0m   [0mUPDATE `cursos` SET `updated_at` = '2012-08-17 17:45:26', `vagas_disponiveis` = 31 WHERE `id` = 2[0m
+  [4;36;1mSQL (38.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mCurso Load (0.5ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+
+ActiveRecord::RecordInvalid (translation missing: pt-BR, activerecord, errors, messages, record_invalid):
+  app/models/inscricao.rb:40:in `valida_vaga'
+  /usr/lib/ruby/gems/1.8/gems/will_paginate-2.3.15/lib/will_paginate/finder.rb:168:in `method_missing'
+  /usr/lib/ruby/gems/1.8/gems/will_paginate-2.3.15/lib/will_paginate/finder.rb:168:in `method_missing'
+  app/models/inscricao.rb:34:in `valida_vaga'
+  app/controllers/inscricaos_controller.rb:95:in `create'
+  app/controllers/inscricaos_controller.rb:93:in `create'
+  /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.9/lib/ruby-debug-ide.rb:109:in `debug_load'
+  /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.9/lib/ruby-debug-ide.rb:109:in `debug_program'
+  /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.9/bin/rdebug-ide:87
+  /usr/bin/rdebug-ide:19:in `load'
+  /usr/bin/rdebug-ide:19
+
+Rendered rescues/_trace (161.1ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (unprocessable_entity)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#new (for 127.0.0.1 at 2012-08-17 14:47:47) [GET]
+  [4;36;1mCurso Load (0.6ms)[0m   [0;1mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;35;1mParticipante Load (1.8ms)[0m   [0mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;36;1mInscricao Load (0.4ms)[0m   [0;1mSELECT * FROM `inscricaos` [0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;36;1mInscricao Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `inscricaos`[0m
+  [4;35;1mInscricao Load (0.3ms)[0m   [0mSELECT * FROM `inscricaos` WHERE (`inscricaos`.`participante_id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/cadastral
+Rendering inscricaos/new
+  [4;36;1mParticipante Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `participantes`[0m
+  [4;35;1mCurso Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `cursos`[0m
+  [4;36;1mCurso Load (0.4ms)[0m   [0;1mSELECT `cursos`.id FROM `cursos` INNER JOIN `cursos_inscricaos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (`cursos`.`id` = 4) AND (`cursos_inscricaos`.inscricao_id = NULL ) LIMIT 1[0m
+  [4;35;1mCurso Load (0.3ms)[0m   [0mSELECT `cursos`.id FROM `cursos` INNER JOIN `cursos_inscricaos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (`cursos`.`id` = 5) AND (`cursos_inscricaos`.inscricao_id = NULL ) LIMIT 1[0m
+  [4;36;1mCurso Load (0.3ms)[0m   [0;1mSELECT `cursos`.id FROM `cursos` INNER JOIN `cursos_inscricaos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (`cursos`.`id` = 6) AND (`cursos_inscricaos`.inscricao_id = NULL ) LIMIT 1[0m
+Rendered inscricaos/_form (85.3ms)
+Completed in 326ms (View: 90, DB: 9) | 200 OK [http://localhost/inscricaos/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#sel_participa (for 127.0.0.1 at 2012-08-17 14:47:57) [POST]
+  Parameters: {"authenticity_token"=>"n0915dZB3U6igEglzg16cKfXIp6tkGaS/gB/LEJhE2Q=", "inscricao_participante_id"=>"1081"}
+  [4;35;1mCurso Load (0.2ms)[0m   [0mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;36;1mParticipante Load (2.2ms)[0m   [0;1mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;35;1mInscricao Load (0.2ms)[0m   [0mSELECT * FROM `inscricaos` [0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;35;1mParticipante Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `participantes`[0m
+  [4;36;1mParticipante Load (0.2ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1081) [0m
+Rendered inscricaos/_exibe_participante (116.0ms)
+Completed in 254ms (View: 127, DB: 6) | 200 OK [http://localhost/inscricaos/sel_participa]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#create (for 127.0.0.1 at 2012-08-17 14:47:59) [POST]
+  Parameters: {"inscricao"=>{"participante_id"=>"1081", "curso_ids"=>["4", "5", "6"]}, "authenticity_token"=>"n0915dZB3U6igEglzg16cKfXIp6tkGaS/gB/LEJhE2Q=", "commit"=>"Confirmar"}
+  [4;35;1mCurso Load (0.2ms)[0m   [0mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;36;1mParticipante Load (2.2ms)[0m   [0;1mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;35;1mInscricao Load (0.2ms)[0m   [0mSELECT * FROM `inscricaos` [0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;35;1mInscricao Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `inscricaos`[0m
+  [4;36;1mCurso Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `cursos`[0m
+  [4;35;1mCurso Load (0.6ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` IN (4,5,6)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCurso Load (0.5ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 4) [0m
+  [4;36;1mCurso Load (0.3ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 5) [0m
+  [4;35;1mCurso Load (0.3ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 6) [0m
+  [4;36;1mInscricao Load (0.3ms)[0m   [0;1mSELECT `inscricaos`.id FROM `inscricaos` WHERE (`inscricaos`.`participante_id` = 1081) LIMIT 1[0m
+  [4;35;1mInscricao Create (0.3ms)[0m   [0mINSERT INTO `inscricaos` (`created_at`, `data_inscricao`, `participante_id`, `updated_at`) VALUES('2012-08-17 17:47:59', '2012-08-17 14:47:59', 1081, '2012-08-17 17:47:59')[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mdescribe `cursos_inscricaos`[0m
+  [4;35;1mcursos_inscricaos Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `cursos_inscricaos`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO `cursos_inscricaos` (`inscricao_id`, `curso_id`) VALUES (8, 4)[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mdescribe `cursos_inscricaos`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO `cursos_inscricaos` (`inscricao_id`, `curso_id`) VALUES (8, 5)[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mdescribe `cursos_inscricaos`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO `cursos_inscricaos` (`inscricao_id`, `curso_id`) VALUES (8, 6)[0m
+  [4;35;1mSQL (46.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mCurso Load (0.6ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 4) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mCurso Update (0.5ms)[0m   [0;1mUPDATE `cursos` SET `updated_at` = '2012-08-17 17:47:59', `vagas_disponiveis` = 4 WHERE `id` = 4[0m
+  [4;35;1mSQL (41.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mCurso Load (0.4ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 5) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mCurso Update (0.4ms)[0m   [0;1mUPDATE `cursos` SET `updated_at` = '2012-08-17 17:47:59', `vagas_disponiveis` = 9 WHERE `id` = 5[0m
+  [4;35;1mSQL (41.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mCurso Load (0.4ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 6) [0m
+  [4;35;1mSQL (3.7ms)[0m   [0mBEGIN[0m
+  [4;36;1mCurso Update (0.4ms)[0m   [0;1mUPDATE `cursos` SET `updated_at` = '2012-08-17 17:47:59', `vagas_disponiveis` = 11 WHERE `id` = 6[0m
+  [4;35;1mSQL (38.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mParticipante Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `participantes`[0m
+  [4;35;1mParticipante Load (0.2ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1081) [0m
+Sent mail to corujao83@hotmail.com
+
+Date: Fri, 17 Aug 2012 14:48:00 -0300
+From: informatica@seducpma.com
+To: corujao83@hotmail.com
+Subject: Texto
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+
+<p>
+<h1>Parabéns ALEXANDRE SOARES</h1>
+<b>Sua inscrição nos modulos de treinamento foi efetuada com sucesso.</b>
+<b>Inscricao nº: 8</b><br/>
+<b>
+  Você esta inscrito nos seguintes módulos
+  <ul>
+    
+        <li>a</li>
+    
+        <li>b</li>
+    
+        <li>c</li>
+    
+  </ul>
+
+  <h2>Agradecemos por sua inscrição</h2>
+  <h2>Equipe de Formação - SEDUC</h2>
+  <h2>Prefeitura de Americana</h2>
+</b>
+</p>
+Redirected to http://localhost:3001/inscricaos/8
+Completed in 3503ms (DB: 191) | 302 Found [http://localhost/inscricaos]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#show (for 127.0.0.1 at 2012-08-17 14:48:03) [GET]
+  Parameters: {"id"=>"8"}
+  [4;36;1mCurso Load (0.6ms)[0m   [0;1mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;35;1mParticipante Load (2.8ms)[0m   [0mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;36;1mInscricao Load (0.3ms)[0m   [0;1mSELECT * FROM `inscricaos` [0m
+  [4;35;1mUnidade Load (0.2ms)[0m   [0mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;36;1mInscricao Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `inscricaos`[0m
+  [4;35;1mInscricao Load (0.3ms)[0m   [0mSELECT * FROM `inscricaos` WHERE (`inscricaos`.`id` = 8) [0m
+Rendering template within layouts/cadastral
+Rendering inscricaos/show
+  [4;36;1mParticipante Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `participantes`[0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1081) [0m
+  [4;36;1mcursos_inscricaos Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `cursos_inscricaos`[0m
+  [4;35;1mCurso Load (0.5ms)[0m   [0mSELECT * FROM `cursos` INNER JOIN `cursos_inscricaos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (`cursos_inscricaos`.inscricao_id = 8 ) [0m
+  [4;36;1mCurso Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `cursos`[0m
+Completed in 289ms (View: 42, DB: 10) | 200 OK [http://localhost/inscricaos/8]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#new (for 127.0.0.1 at 2012-08-17 14:49:28) [GET]
+  [4;35;1mCurso Load (0.5ms)[0m   [0mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;36;1mParticipante Load (20.6ms)[0m   [0;1mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;35;1mInscricao Load (0.3ms)[0m   [0mSELECT * FROM `inscricaos` [0m
+  [4;36;1mUnidade Load (0.5ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;35;1mInscricao Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `inscricaos`[0m
+  [4;36;1mInscricao Load (0.3ms)[0m   [0;1mSELECT * FROM `inscricaos` WHERE (`inscricaos`.`participante_id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/cadastral
+Rendering inscricaos/new
+  [4;35;1mParticipante Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `participantes`[0m
+  [4;36;1mCurso Columns (3.1ms)[0m   [0;1mSHOW FIELDS FROM `cursos`[0m
+  [4;35;1mCurso Load (0.5ms)[0m   [0mSELECT `cursos`.id FROM `cursos` INNER JOIN `cursos_inscricaos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (`cursos`.`id` = 3) AND (`cursos_inscricaos`.inscricao_id = NULL ) LIMIT 1[0m
+  [4;36;1mCurso Load (0.4ms)[0m   [0;1mSELECT `cursos`.id FROM `cursos` INNER JOIN `cursos_inscricaos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (`cursos`.`id` = 2) AND (`cursos_inscricaos`.inscricao_id = NULL ) LIMIT 1[0m
+  [4;35;1mCurso Load (0.4ms)[0m   [0mSELECT `cursos`.id FROM `cursos` INNER JOIN `cursos_inscricaos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (`cursos`.`id` = 1) AND (`cursos_inscricaos`.inscricao_id = NULL ) LIMIT 1[0m
+Rendered inscricaos/_form (105.2ms)
+Completed in 229ms (View: 110, DB: 30) | 200 OK [http://localhost/inscricaos/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#sel_participa (for 127.0.0.1 at 2012-08-17 14:49:34) [POST]
+  Parameters: {"authenticity_token"=>"n0915dZB3U6igEglzg16cKfXIp6tkGaS/gB/LEJhE2Q=", "inscricao_participante_id"=>"1081"}
+  [4;36;1mCurso Load (0.2ms)[0m   [0;1mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;35;1mParticipante Load (2.2ms)[0m   [0mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;36;1mInscricao Load (0.2ms)[0m   [0;1mSELECT * FROM `inscricaos` [0m
+  [4;35;1mUnidade Load (0.2ms)[0m   [0mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;36;1mParticipante Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `participantes`[0m
+  [4;35;1mParticipante Load (0.5ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1081) [0m
+Rendered inscricaos/_exibe_participante (10.4ms)
+Completed in 143ms (View: 14, DB: 6) | 200 OK [http://localhost/inscricaos/sel_participa]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#create (for 127.0.0.1 at 2012-08-17 14:49:39) [POST]
+  Parameters: {"inscricao"=>{"participante_id"=>"1081", "curso_ids"=>["3", "2", "1"]}, "authenticity_token"=>"n0915dZB3U6igEglzg16cKfXIp6tkGaS/gB/LEJhE2Q=", "commit"=>"Confirmar"}
+  [4;36;1mCurso Load (0.3ms)[0m   [0;1mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;35;1mParticipante Load (2.4ms)[0m   [0mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;36;1mInscricao Load (0.2ms)[0m   [0;1mSELECT * FROM `inscricaos` [0m
+  [4;35;1mUnidade Load (0.2ms)[0m   [0mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;36;1mInscricao Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `inscricaos`[0m
+  [4;35;1mCurso Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `cursos`[0m
+  [4;36;1mCurso Load (0.5ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` IN (3,2,1)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mCurso Load (0.4ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 3) [0m
+  [4;35;1mCurso Load (0.3ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 2) [0m
+  [4;36;1mCurso Load (0.3ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 1) [0m
+  [4;35;1mInscricao Load (0.3ms)[0m   [0mSELECT `inscricaos`.id FROM `inscricaos` WHERE (`inscricaos`.`participante_id` = 1081) LIMIT 1[0m
+  [4;36;1mInscricao Create (0.3ms)[0m   [0;1mINSERT INTO `inscricaos` (`created_at`, `data_inscricao`, `participante_id`, `updated_at`) VALUES('2012-08-17 17:49:39', '2012-08-17 14:49:39', 1081, '2012-08-17 17:49:39')[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mdescribe `cursos_inscricaos`[0m
+  [4;36;1mcursos_inscricaos Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `cursos_inscricaos`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO `cursos_inscricaos` (`inscricao_id`, `curso_id`) VALUES (3, 3)[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mdescribe `cursos_inscricaos`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO `cursos_inscricaos` (`inscricao_id`, `curso_id`) VALUES (3, 2)[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mdescribe `cursos_inscricaos`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO `cursos_inscricaos` (`inscricao_id`, `curso_id`) VALUES (3, 1)[0m
+  [4;36;1mSQL (53.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mCurso Load (0.4ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 3) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCurso Update (0.3ms)[0m   [0mUPDATE `cursos` SET `updated_at` = '2012-08-17 17:49:39', `vagas_disponiveis` = 35 WHERE `id` = 3[0m
+  [4;36;1mSQL (43.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mCurso Load (0.4ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 2) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCurso Update (0.4ms)[0m   [0mUPDATE `cursos` SET `updated_at` = '2012-08-17 17:49:39', `vagas_disponiveis` = 35 WHERE `id` = 2[0m
+  [4;36;1mSQL (37.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mCurso Load (0.5ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+
+ActiveRecord::RecordInvalid (translation missing: pt-BR, activerecord, errors, messages, record_invalid):
+  app/models/inscricao.rb:40:in `valida_vaga'
+  /usr/lib/ruby/gems/1.8/gems/will_paginate-2.3.15/lib/will_paginate/finder.rb:168:in `method_missing'
+  /usr/lib/ruby/gems/1.8/gems/will_paginate-2.3.15/lib/will_paginate/finder.rb:168:in `method_missing'
+  app/models/inscricao.rb:34:in `valida_vaga'
+  app/controllers/inscricaos_controller.rb:95:in `create'
+  app/controllers/inscricaos_controller.rb:93:in `create'
+  /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.9/lib/ruby-debug-ide.rb:109:in `debug_load'
+  /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.9/lib/ruby-debug-ide.rb:109:in `debug_program'
+  /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.9/bin/rdebug-ide:87
+  /usr/bin/rdebug-ide:19:in `load'
+  /usr/bin/rdebug-ide:19
+
+Rendered rescues/_trace (154.7ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (unprocessable_entity)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#new (for 127.0.0.1 at 2012-08-17 14:51:28) [GET]
+  [4;36;1mCurso Load (0.7ms)[0m   [0;1mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;35;1mParticipante Load (2.1ms)[0m   [0mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;36;1mInscricao Load (0.5ms)[0m   [0;1mSELECT * FROM `inscricaos` [0m
+  [4;35;1mUnidade Load (0.2ms)[0m   [0mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;36;1mInscricao Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `inscricaos`[0m
+  [4;35;1mInscricao Load (0.4ms)[0m   [0mSELECT * FROM `inscricaos` WHERE (`inscricaos`.`participante_id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/cadastral
+Rendering inscricaos/new
+  [4;36;1mParticipante Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `participantes`[0m
+  [4;35;1mCurso Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `cursos`[0m
+  [4;36;1mCurso Load (0.7ms)[0m   [0;1mSELECT `cursos`.id FROM `cursos` INNER JOIN `cursos_inscricaos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (`cursos`.`id` = 4) AND (`cursos_inscricaos`.inscricao_id = NULL ) LIMIT 1[0m
+  [4;35;1mCurso Load (0.4ms)[0m   [0mSELECT `cursos`.id FROM `cursos` INNER JOIN `cursos_inscricaos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (`cursos`.`id` = 5) AND (`cursos_inscricaos`.inscricao_id = NULL ) LIMIT 1[0m
+  [4;36;1mCurso Load (0.4ms)[0m   [0;1mSELECT `cursos`.id FROM `cursos` INNER JOIN `cursos_inscricaos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (`cursos`.`id` = 6) AND (`cursos_inscricaos`.inscricao_id = NULL ) LIMIT 1[0m
+  [4;35;1mCurso Load (0.4ms)[0m   [0mSELECT `cursos`.id FROM `cursos` INNER JOIN `cursos_inscricaos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (`cursos`.`id` = 3) AND (`cursos_inscricaos`.inscricao_id = NULL ) LIMIT 1[0m
+  [4;36;1mCurso Load (0.4ms)[0m   [0;1mSELECT `cursos`.id FROM `cursos` INNER JOIN `cursos_inscricaos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (`cursos`.`id` = 2) AND (`cursos_inscricaos`.inscricao_id = NULL ) LIMIT 1[0m
+  [4;35;1mCurso Load (0.4ms)[0m   [0mSELECT `cursos`.id FROM `cursos` INNER JOIN `cursos_inscricaos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (`cursos`.`id` = 1) AND (`cursos_inscricaos`.inscricao_id = NULL ) LIMIT 1[0m
+Rendered inscricaos/_form (133.2ms)
+Completed in 374ms (View: 241, DB: 13) | 200 OK [http://localhost/inscricaos/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#sel_participa (for 127.0.0.1 at 2012-08-17 14:51:42) [POST]
+  Parameters: {"authenticity_token"=>"n0915dZB3U6igEglzg16cKfXIp6tkGaS/gB/LEJhE2Q=", "inscricao_participante_id"=>"1081"}
+  [4;36;1mCurso Load (0.2ms)[0m   [0;1mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;35;1mParticipante Load (2.2ms)[0m   [0mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;36;1mInscricao Load (0.2ms)[0m   [0;1mSELECT * FROM `inscricaos` [0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;36;1mParticipante Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `participantes`[0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1081) [0m
+Rendered inscricaos/_exibe_participante (7.7ms)
+Completed in 138ms (View: 11, DB: 5) | 200 OK [http://localhost/inscricaos/sel_participa]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#create (for 127.0.0.1 at 2012-08-17 14:51:43) [POST]
+  Parameters: {"inscricao"=>{"participante_id"=>"1081", "curso_ids"=>["4", "5", "6"]}, "authenticity_token"=>"n0915dZB3U6igEglzg16cKfXIp6tkGaS/gB/LEJhE2Q=", "commit"=>"Confirmar"}
+  [4;36;1mCurso Load (0.2ms)[0m   [0;1mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;35;1mParticipante Load (2.1ms)[0m   [0mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;36;1mInscricao Load (0.2ms)[0m   [0;1mSELECT * FROM `inscricaos` [0m
+  [4;35;1mUnidade Load (0.2ms)[0m   [0mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;36;1mInscricao Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `inscricaos`[0m
+  [4;35;1mCurso Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `cursos`[0m
+  [4;36;1mCurso Load (0.4ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` IN (4,5,6)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mCurso Load (0.4ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 4) [0m
+  [4;35;1mCurso Load (0.3ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 5) [0m
+  [4;36;1mCurso Load (0.2ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 6) [0m
+  [4;35;1mInscricao Load (0.3ms)[0m   [0mSELECT `inscricaos`.id FROM `inscricaos` WHERE (`inscricaos`.`participante_id` = 1081) LIMIT 1[0m
+  [4;36;1mInscricao Create (0.4ms)[0m   [0;1mINSERT INTO `inscricaos` (`created_at`, `data_inscricao`, `participante_id`, `updated_at`) VALUES('2012-08-17 17:51:44', '2012-08-17 14:51:44', 1081, '2012-08-17 17:51:44')[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mdescribe `cursos_inscricaos`[0m
+  [4;36;1mcursos_inscricaos Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `cursos_inscricaos`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO `cursos_inscricaos` (`inscricao_id`, `curso_id`) VALUES (4, 4)[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `cursos_inscricaos`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO `cursos_inscricaos` (`inscricao_id`, `curso_id`) VALUES (4, 5)[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `cursos_inscricaos`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO `cursos_inscricaos` (`inscricao_id`, `curso_id`) VALUES (4, 6)[0m
+  [4;36;1mSQL (42.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mCurso Load (0.4ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 4) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCurso Update (0.4ms)[0m   [0mUPDATE `cursos` SET `updated_at` = '2012-08-17 17:51:44', `vagas_disponiveis` = 4 WHERE `id` = 4[0m
+  [4;36;1mSQL (44.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mCurso Load (0.4ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 5) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCurso Update (0.3ms)[0m   [0mUPDATE `cursos` SET `updated_at` = '2012-08-17 17:51:44', `vagas_disponiveis` = 5 WHERE `id` = 5[0m
+  [4;36;1mSQL (43.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mCurso Load (1.4ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 6) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCurso Update (0.4ms)[0m   [0mUPDATE `cursos` SET `updated_at` = '2012-08-17 17:51:44', `vagas_disponiveis` = 3 WHERE `id` = 6[0m
+  [4;36;1mSQL (42.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mParticipante Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `participantes`[0m
+  [4;36;1mParticipante Load (0.2ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1081) [0m
+Sent mail to corujao83@hotmail.com
+
+Date: Fri, 17 Aug 2012 14:51:44 -0300
+From: informatica@seducpma.com
+To: corujao83@hotmail.com
+Subject: Texto
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+
+<p>
+<h1>Parabéns ALEXANDRE SOARES</h1>
+<b>Sua inscrição nos modulos de treinamento foi efetuada com sucesso.</b>
+<b>Inscricao nº: 4</b><br/>
+<b>
+  Você esta inscrito nos seguintes módulos
+  <ul>
+    
+        <li>a</li>
+    
+        <li>b</li>
+    
+        <li>c</li>
+    
+  </ul>
+
+  <h2>Agradecemos por sua inscrição</h2>
+  <h2>Equipe de Formação - SEDUC</h2>
+  <h2>Prefeitura de Americana</h2>
+</b>
+</p>
+Redirected to http://localhost:3001/inscricaos/4
+Completed in 4162ms (DB: 191) | 302 Found [http://localhost/inscricaos]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#show (for 127.0.0.1 at 2012-08-17 14:51:48) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mCurso Load (0.7ms)[0m   [0mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;36;1mParticipante Load (2.2ms)[0m   [0;1mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;35;1mInscricao Load (0.4ms)[0m   [0mSELECT * FROM `inscricaos` [0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;35;1mInscricao Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `inscricaos`[0m
+  [4;36;1mInscricao Load (0.4ms)[0m   [0;1mSELECT * FROM `inscricaos` WHERE (`inscricaos`.`id` = 4) [0m
+Rendering template within layouts/cadastral
+Rendering inscricaos/show
+  [4;35;1mParticipante Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `participantes`[0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1081) [0m
+  [4;35;1mcursos_inscricaos Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `cursos_inscricaos`[0m
+  [4;36;1mCurso Load (0.5ms)[0m   [0;1mSELECT * FROM `cursos` INNER JOIN `cursos_inscricaos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (`cursos_inscricaos`.inscricao_id = 4 ) [0m
+  [4;35;1mCurso Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `cursos`[0m
+Completed in 195ms (View: 44, DB: 11) | 200 OK [http://localhost/inscricaos/4]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#create (for 127.0.0.1 at 2012-08-17 14:52:22) [POST]
+  Parameters: {"inscricao"=>{"participante_id"=>"1081", "curso_ids"=>["3", "2", "1"]}, "authenticity_token"=>"n0915dZB3U6igEglzg16cKfXIp6tkGaS/gB/LEJhE2Q=", "commit"=>"Confirmar"}
+  [4;36;1mCurso Load (0.2ms)[0m   [0;1mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;35;1mParticipante Load (1.6ms)[0m   [0mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;36;1mInscricao Load (0.3ms)[0m   [0;1mSELECT * FROM `inscricaos` [0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;36;1mInscricao Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `inscricaos`[0m
+  [4;35;1mCurso Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `cursos`[0m
+  [4;36;1mCurso Load (0.4ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` IN (3,2,1)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mCurso Load (0.3ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 3) [0m
+  [4;35;1mCurso Load (0.2ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 2) [0m
+  [4;36;1mCurso Load (0.2ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 1) [0m
+  [4;35;1mInscricao Load (0.3ms)[0m   [0mSELECT `inscricaos`.id FROM `inscricaos` WHERE (`inscricaos`.`participante_id` = 1081) LIMIT 1[0m
+  [4;36;1mInscricao Create (0.3ms)[0m   [0;1mINSERT INTO `inscricaos` (`created_at`, `data_inscricao`, `participante_id`, `updated_at`) VALUES('2012-08-17 17:52:22', '2012-08-17 14:52:22', 1081, '2012-08-17 17:52:22')[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mdescribe `cursos_inscricaos`[0m
+  [4;36;1mcursos_inscricaos Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `cursos_inscricaos`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO `cursos_inscricaos` (`inscricao_id`, `curso_id`) VALUES (5, 3)[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `cursos_inscricaos`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO `cursos_inscricaos` (`inscricao_id`, `curso_id`) VALUES (5, 2)[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `cursos_inscricaos`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO `cursos_inscricaos` (`inscricao_id`, `curso_id`) VALUES (5, 1)[0m
+  [4;36;1mSQL (70.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mCurso Load (0.4ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 3) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCurso Update (0.3ms)[0m   [0mUPDATE `cursos` SET `updated_at` = '2012-08-17 17:52:22', `vagas_disponiveis` = 34 WHERE `id` = 3[0m
+  [4;36;1mSQL (44.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mCurso Load (0.4ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 2) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCurso Update (0.3ms)[0m   [0mUPDATE `cursos` SET `updated_at` = '2012-08-17 17:52:22', `vagas_disponiveis` = 34 WHERE `id` = 2[0m
+  [4;36;1mSQL (43.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mCurso Load (0.4ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+
+ActiveRecord::RecordInvalid (translation missing: pt-BR, activerecord, errors, messages, record_invalid):
+  app/models/inscricao.rb:40:in `valida_vaga'
+  /usr/lib/ruby/gems/1.8/gems/will_paginate-2.3.15/lib/will_paginate/finder.rb:168:in `method_missing'
+  /usr/lib/ruby/gems/1.8/gems/will_paginate-2.3.15/lib/will_paginate/finder.rb:168:in `method_missing'
+  app/models/inscricao.rb:34:in `valida_vaga'
+  app/controllers/inscricaos_controller.rb:95:in `create'
+  app/controllers/inscricaos_controller.rb:93:in `create'
+  /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.9/lib/ruby-debug-ide.rb:109:in `debug_load'
+  /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.9/lib/ruby-debug-ide.rb:109:in `debug_program'
+  /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.9/bin/rdebug-ide:87
+  /usr/bin/rdebug-ide:19:in `load'
+  /usr/bin/rdebug-ide:19
+
+Rendered rescues/_trace (164.9ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (unprocessable_entity)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#new (for 127.0.0.1 at 2012-08-17 14:53:30) [GET]
+  [4;36;1mCurso Load (0.7ms)[0m   [0;1mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;35;1mParticipante Load (2.2ms)[0m   [0mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;36;1mInscricao Load (0.3ms)[0m   [0;1mSELECT * FROM `inscricaos` [0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;36;1mInscricao Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `inscricaos`[0m
+  [4;35;1mInscricao Load (0.2ms)[0m   [0mSELECT * FROM `inscricaos` WHERE (`inscricaos`.`participante_id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/cadastral
+Rendering inscricaos/new
+  [4;36;1mParticipante Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `participantes`[0m
+  [4;35;1mCurso Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `cursos`[0m
+  [4;36;1mCurso Load (0.5ms)[0m   [0;1mSELECT `cursos`.id FROM `cursos` INNER JOIN `cursos_inscricaos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (`cursos`.`id` = 4) AND (`cursos_inscricaos`.inscricao_id = NULL ) LIMIT 1[0m
+  [4;35;1mCurso Load (0.5ms)[0m   [0mSELECT `cursos`.id FROM `cursos` INNER JOIN `cursos_inscricaos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (`cursos`.`id` = 5) AND (`cursos_inscricaos`.inscricao_id = NULL ) LIMIT 1[0m
+  [4;36;1mCurso Load (0.4ms)[0m   [0;1mSELECT `cursos`.id FROM `cursos` INNER JOIN `cursos_inscricaos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (`cursos`.`id` = 6) AND (`cursos_inscricaos`.inscricao_id = NULL ) LIMIT 1[0m
+  [4;35;1mCurso Load (0.3ms)[0m   [0mSELECT `cursos`.id FROM `cursos` INNER JOIN `cursos_inscricaos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (`cursos`.`id` = 3) AND (`cursos_inscricaos`.inscricao_id = NULL ) LIMIT 1[0m
+  [4;36;1mCurso Load (0.4ms)[0m   [0;1mSELECT `cursos`.id FROM `cursos` INNER JOIN `cursos_inscricaos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (`cursos`.`id` = 2) AND (`cursos_inscricaos`.inscricao_id = NULL ) LIMIT 1[0m
+  [4;35;1mCurso Load (0.3ms)[0m   [0mSELECT `cursos`.id FROM `cursos` INNER JOIN `cursos_inscricaos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (`cursos`.`id` = 1) AND (`cursos_inscricaos`.inscricao_id = NULL ) LIMIT 1[0m
+Rendered inscricaos/_form (143.7ms)
+Completed in 371ms (View: 148, DB: 11) | 200 OK [http://localhost/inscricaos/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#sel_participa (for 127.0.0.1 at 2012-08-17 14:53:38) [POST]
+  Parameters: {"authenticity_token"=>"n0915dZB3U6igEglzg16cKfXIp6tkGaS/gB/LEJhE2Q=", "inscricao_participante_id"=>"1081"}
+  [4;36;1mCurso Load (0.2ms)[0m   [0;1mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;35;1mParticipante Load (2.2ms)[0m   [0mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;36;1mInscricao Load (0.2ms)[0m   [0;1mSELECT * FROM `inscricaos` [0m
+  [4;35;1mUnidade Load (0.2ms)[0m   [0mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;36;1mParticipante Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `participantes`[0m
+  [4;35;1mParticipante Load (0.2ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1081) [0m
+Rendered inscricaos/_exibe_participante (14.6ms)
+Completed in 146ms (View: 19, DB: 5) | 200 OK [http://localhost/inscricaos/sel_participa]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#create (for 127.0.0.1 at 2012-08-17 14:53:41) [POST]
+  Parameters: {"inscricao"=>{"participante_id"=>"1081", "curso_ids"=>["3", "2", "1"]}, "authenticity_token"=>"n0915dZB3U6igEglzg16cKfXIp6tkGaS/gB/LEJhE2Q=", "commit"=>"Confirmar"}
+  [4;36;1mCurso Load (0.2ms)[0m   [0;1mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;35;1mParticipante Load (1.7ms)[0m   [0mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;36;1mInscricao Load (0.1ms)[0m   [0;1mSELECT * FROM `inscricaos` [0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;36;1mInscricao Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `inscricaos`[0m
+  [4;35;1mCurso Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `cursos`[0m
+  [4;36;1mCurso Load (0.5ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` IN (3,2,1)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mCurso Load (0.4ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 3) [0m
+  [4;35;1mCurso Load (0.2ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 2) [0m
+  [4;36;1mCurso Load (0.2ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 1) [0m
+  [4;35;1mInscricao Load (0.2ms)[0m   [0mSELECT `inscricaos`.id FROM `inscricaos` WHERE (`inscricaos`.`participante_id` = 1081) LIMIT 1[0m
+  [4;36;1mInscricao Create (0.3ms)[0m   [0;1mINSERT INTO `inscricaos` (`created_at`, `data_inscricao`, `participante_id`, `updated_at`) VALUES('2012-08-17 17:53:41', '2012-08-17 14:53:41', 1081, '2012-08-17 17:53:41')[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mdescribe `cursos_inscricaos`[0m
+  [4;36;1mcursos_inscricaos Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `cursos_inscricaos`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO `cursos_inscricaos` (`inscricao_id`, `curso_id`) VALUES (6, 3)[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `cursos_inscricaos`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO `cursos_inscricaos` (`inscricao_id`, `curso_id`) VALUES (6, 2)[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `cursos_inscricaos`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO `cursos_inscricaos` (`inscricao_id`, `curso_id`) VALUES (6, 1)[0m
+  [4;36;1mSQL (53.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mCurso Load (0.4ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 3) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCurso Update (0.4ms)[0m   [0mUPDATE `cursos` SET `updated_at` = '2012-08-17 17:53:42', `vagas_disponiveis` = 33 WHERE `id` = 3[0m
+  [4;36;1mSQL (35.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mCurso Load (0.3ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 2) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCurso Update (0.3ms)[0m   [0mUPDATE `cursos` SET `updated_at` = '2012-08-17 17:53:42', `vagas_disponiveis` = 33 WHERE `id` = 2[0m
+  [4;36;1mSQL (35.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mCurso Load (0.4ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+
+ActiveRecord::RecordInvalid (translation missing: pt-BR, activerecord, errors, messages, record_invalid):
+  app/models/inscricao.rb:40:in `valida_vaga'
+  /usr/lib/ruby/gems/1.8/gems/will_paginate-2.3.15/lib/will_paginate/finder.rb:168:in `method_missing'
+  /usr/lib/ruby/gems/1.8/gems/will_paginate-2.3.15/lib/will_paginate/finder.rb:168:in `method_missing'
+  app/models/inscricao.rb:34:in `valida_vaga'
+  app/controllers/inscricaos_controller.rb:95:in `create'
+  app/controllers/inscricaos_controller.rb:93:in `create'
+  /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.9/lib/ruby-debug-ide.rb:109:in `debug_load'
+  /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.9/lib/ruby-debug-ide.rb:109:in `debug_program'
+  /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.9/bin/rdebug-ide:87
+  /usr/bin/rdebug-ide:19:in `load'
+  /usr/bin/rdebug-ide:19
+
+Rendered rescues/_trace (163.2ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (unprocessable_entity)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#create (for 127.0.0.1 at 2012-08-17 14:54:09) [POST]
+  Parameters: {"inscricao"=>{"participante_id"=>"1081", "curso_ids"=>["3", "2"]}, "authenticity_token"=>"n0915dZB3U6igEglzg16cKfXIp6tkGaS/gB/LEJhE2Q=", "commit"=>"Confirmar"}
+  [4;36;1mCurso Load (0.7ms)[0m   [0;1mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;35;1mParticipante Load (2.2ms)[0m   [0mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;36;1mInscricao Load (0.3ms)[0m   [0;1mSELECT * FROM `inscricaos` [0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;36;1mInscricao Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `inscricaos`[0m
+  [4;35;1mCurso Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `cursos`[0m
+  [4;36;1mCurso Load (0.4ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` IN (3,2)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mCurso Load (0.3ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 3) [0m
+  [4;35;1mCurso Load (0.2ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 2) [0m
+  [4;36;1mInscricao Load (0.2ms)[0m   [0;1mSELECT `inscricaos`.id FROM `inscricaos` WHERE (`inscricaos`.`participante_id` = 1081) LIMIT 1[0m
+  [4;35;1mInscricao Create (0.3ms)[0m   [0mINSERT INTO `inscricaos` (`created_at`, `data_inscricao`, `participante_id`, `updated_at`) VALUES('2012-08-17 17:54:10', '2012-08-17 14:54:10', 1081, '2012-08-17 17:54:10')[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mdescribe `cursos_inscricaos`[0m
+  [4;35;1mcursos_inscricaos Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `cursos_inscricaos`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO `cursos_inscricaos` (`inscricao_id`, `curso_id`) VALUES (7, 3)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `cursos_inscricaos`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO `cursos_inscricaos` (`inscricao_id`, `curso_id`) VALUES (7, 2)[0m
+  [4;35;1mSQL (103.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mCurso Load (0.5ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 3) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mCurso Update (0.5ms)[0m   [0;1mUPDATE `cursos` SET `updated_at` = '2012-08-17 17:54:10', `vagas_disponiveis` = 32 WHERE `id` = 3[0m
+  [4;35;1mSQL (111.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mCurso Load (0.4ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 2) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mCurso Update (0.4ms)[0m   [0;1mUPDATE `cursos` SET `updated_at` = '2012-08-17 17:54:10', `vagas_disponiveis` = 32 WHERE `id` = 2[0m
+  [4;35;1mSQL (132.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mParticipante Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `participantes`[0m
+  [4;35;1mParticipante Load (0.3ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1081) [0m
+Sent mail to corujao83@hotmail.com
+
+Date: Fri, 17 Aug 2012 14:54:10 -0300
+From: informatica@seducpma.com
+To: corujao83@hotmail.com
+Subject: Texto
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+
+<p>
+<h1>Parabéns ALEXANDRE SOARES</h1>
+<b>Sua inscrição nos modulos de treinamento foi efetuada com sucesso.</b>
+<b>Inscricao nº: 7</b><br/>
+<b>
+  Você esta inscrito nos seguintes módulos
+  <ul>
+    
+        <li>Curso de iniciação teatral 1º etapa   2º semestre/2012</li>
+    
+        <li>ESTUDO DO MEIO: VISITAÇÃO A MUSEUS</li>
+    
+  </ul>
+
+  <h2>Agradecemos por sua inscrição</h2>
+  <h2>Equipe de Formação - SEDUC</h2>
+  <h2>Prefeitura de Americana</h2>
+</b>
+</p>
+Redirected to http://localhost:3001/inscricaos/7
+Completed in 3989ms (DB: 362) | 302 Found [http://localhost/inscricaos]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#show (for 127.0.0.1 at 2012-08-17 14:54:13) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mCurso Load (0.7ms)[0m   [0;1mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;35;1mParticipante Load (2.3ms)[0m   [0mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;36;1mInscricao Load (0.4ms)[0m   [0;1mSELECT * FROM `inscricaos` [0m
+  [4;35;1mUnidade Load (0.2ms)[0m   [0mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;36;1mInscricao Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `inscricaos`[0m
+  [4;35;1mInscricao Load (0.4ms)[0m   [0mSELECT * FROM `inscricaos` WHERE (`inscricaos`.`id` = 7) [0m
+Rendering template within layouts/cadastral
+Rendering inscricaos/show
+  [4;36;1mParticipante Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `participantes`[0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1081) [0m
+  [4;36;1mcursos_inscricaos Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `cursos_inscricaos`[0m
+  [4;35;1mCurso Load (0.4ms)[0m   [0mSELECT * FROM `cursos` INNER JOIN `cursos_inscricaos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (`cursos_inscricaos`.inscricao_id = 7 ) [0m
+  [4;36;1mCurso Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `cursos`[0m
+Completed in 174ms (View: 28, DB: 10) | 200 OK [http://localhost/inscricaos/7]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#new (for 127.0.0.1 at 2012-08-17 14:54:53) [POST]
+  Parameters: {"authenticity_token"=>"n0915dZB3U6igEglzg16cKfXIp6tkGaS/gB/LEJhE2Q="}
+  [4;35;1mCurso Load (0.7ms)[0m   [0mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;36;1mParticipante Load (2.2ms)[0m   [0;1mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;35;1mInscricao Load (0.6ms)[0m   [0mSELECT * FROM `inscricaos` [0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;35;1mInscricao Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `inscricaos`[0m
+  [4;36;1mInscricao Load (0.3ms)[0m   [0;1mSELECT * FROM `inscricaos` WHERE (`inscricaos`.`participante_id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/cadastral
+Rendering inscricaos/new
+  [4;35;1mParticipante Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `participantes`[0m
+  [4;36;1mCurso Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `cursos`[0m
+  [4;35;1mCurso Load (0.4ms)[0m   [0mSELECT `cursos`.id FROM `cursos` INNER JOIN `cursos_inscricaos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (`cursos`.`id` = 4) AND (`cursos_inscricaos`.inscricao_id = NULL ) LIMIT 1[0m
+  [4;36;1mCurso Load (0.4ms)[0m   [0;1mSELECT `cursos`.id FROM `cursos` INNER JOIN `cursos_inscricaos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (`cursos`.`id` = 5) AND (`cursos_inscricaos`.inscricao_id = NULL ) LIMIT 1[0m
+  [4;35;1mCurso Load (0.3ms)[0m   [0mSELECT `cursos`.id FROM `cursos` INNER JOIN `cursos_inscricaos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (`cursos`.`id` = 6) AND (`cursos_inscricaos`.inscricao_id = NULL ) LIMIT 1[0m
+  [4;36;1mCurso Load (0.3ms)[0m   [0;1mSELECT `cursos`.id FROM `cursos` INNER JOIN `cursos_inscricaos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (`cursos`.`id` = 3) AND (`cursos_inscricaos`.inscricao_id = NULL ) LIMIT 1[0m
+  [4;35;1mCurso Load (0.3ms)[0m   [0mSELECT `cursos`.id FROM `cursos` INNER JOIN `cursos_inscricaos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (`cursos`.`id` = 2) AND (`cursos_inscricaos`.inscricao_id = NULL ) LIMIT 1[0m
+  [4;36;1mCurso Load (0.3ms)[0m   [0;1mSELECT `cursos`.id FROM `cursos` INNER JOIN `cursos_inscricaos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (`cursos`.`id` = 1) AND (`cursos_inscricaos`.inscricao_id = NULL ) LIMIT 1[0m
+Rendered inscricaos/_form (118.8ms)
+Completed in 267ms (View: 122, DB: 11) | 200 OK [http://localhost/inscricaos/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#sel_participa (for 127.0.0.1 at 2012-08-17 14:54:58) [POST]
+  Parameters: {"authenticity_token"=>"n0915dZB3U6igEglzg16cKfXIp6tkGaS/gB/LEJhE2Q=", "inscricao_participante_id"=>"1081"}
+  [4;35;1mCurso Load (0.2ms)[0m   [0mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;36;1mParticipante Load (2.2ms)[0m   [0;1mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;35;1mInscricao Load (0.2ms)[0m   [0mSELECT * FROM `inscricaos` [0m
+  [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;35;1mParticipante Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `participantes`[0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1081) [0m
+Rendered inscricaos/_exibe_participante (7.3ms)
+Completed in 219ms (View: 10, DB: 5) | 200 OK [http://localhost/inscricaos/sel_participa]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#create (for 127.0.0.1 at 2012-08-17 14:55:01) [POST]
+  Parameters: {"inscricao"=>{"participante_id"=>"1081", "curso_ids"=>["1"]}, "authenticity_token"=>"n0915dZB3U6igEglzg16cKfXIp6tkGaS/gB/LEJhE2Q=", "commit"=>"Confirmar"}
+  [4;35;1mCurso Load (0.2ms)[0m   [0mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;36;1mParticipante Load (2.2ms)[0m   [0;1mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;35;1mInscricao Load (0.2ms)[0m   [0mSELECT * FROM `inscricaos` [0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;35;1mInscricao Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `inscricaos`[0m
+  [4;36;1mCurso Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `cursos`[0m
+  [4;35;1mCurso Load (0.4ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 1) [0m
+  [4;36;1mInscricao Load (0.4ms)[0m   [0;1mSELECT `inscricaos`.id FROM `inscricaos` WHERE (`inscricaos`.`participante_id` = 1081) LIMIT 1[0m
+  [4;35;1mInscricao Create (0.3ms)[0m   [0mINSERT INTO `inscricaos` (`created_at`, `data_inscricao`, `participante_id`, `updated_at`) VALUES('2012-08-17 17:55:01', '2012-08-17 14:55:01', 1081, '2012-08-17 17:55:01')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mdescribe `cursos_inscricaos`[0m
+  [4;35;1mcursos_inscricaos Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `cursos_inscricaos`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mINSERT INTO `cursos_inscricaos` (`inscricao_id`, `curso_id`) VALUES (8, 1)[0m
+  [4;35;1mSQL (48.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mCurso Load (0.2ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mCurso Update (0.8ms)[0m   [0;1mUPDATE `cursos` SET `updated_at` = '2012-08-17 17:55:01', `vagas_disponiveis` = 4 WHERE `id` = 1[0m
+  [4;35;1mSQL (39.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mParticipante Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `participantes`[0m
+  [4;35;1mParticipante Load (0.2ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1081) [0m
+Sent mail to corujao83@hotmail.com
+
+Date: Fri, 17 Aug 2012 14:55:01 -0300
+From: informatica@seducpma.com
+To: corujao83@hotmail.com
+Subject: Texto
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+
+<p>
+<h1>Parabéns ALEXANDRE SOARES</h1>
+<b>Sua inscrição nos modulos de treinamento foi efetuada com sucesso.</b>
+<b>Inscricao nº: 8</b><br/>
+<b>
+  Você esta inscrito nos seguintes módulos
+  <ul>
+    
+        <li>IDENTIFICANDO E ATENDENDO O ALUNO COM DEFICIÊNCIA INTELECTUAL EM SUAS NECESSIDADES</li>
+    
+  </ul>
+
+  <h2>Agradecemos por sua inscrição</h2>
+  <h2>Equipe de Formação - SEDUC</h2>
+  <h2>Prefeitura de Americana</h2>
+</b>
+</p>
+Redirected to http://localhost:3001/inscricaos/8
+Completed in 3327ms (DB: 102) | 302 Found [http://localhost/inscricaos]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#show (for 127.0.0.1 at 2012-08-17 14:55:05) [GET]
+  Parameters: {"id"=>"8"}
+  [4;36;1mCurso Load (0.7ms)[0m   [0;1mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;35;1mParticipante Load (1.6ms)[0m   [0mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;36;1mInscricao Load (0.4ms)[0m   [0;1mSELECT * FROM `inscricaos` [0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;36;1mInscricao Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `inscricaos`[0m
+  [4;35;1mInscricao Load (0.3ms)[0m   [0mSELECT * FROM `inscricaos` WHERE (`inscricaos`.`id` = 8) [0m
+Rendering template within layouts/cadastral
+Rendering inscricaos/show
+  [4;36;1mParticipante Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `participantes`[0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1081) [0m
+  [4;36;1mcursos_inscricaos Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `cursos_inscricaos`[0m
+  [4;35;1mCurso Load (0.4ms)[0m   [0mSELECT * FROM `cursos` INNER JOIN `cursos_inscricaos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (`cursos_inscricaos`.inscricao_id = 8 ) [0m
+  [4;36;1mCurso Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `cursos`[0m
+Completed in 224ms (View: 28, DB: 8) | 200 OK [http://localhost/inscricaos/8]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#new (for 127.0.0.1 at 2012-08-17 14:55:57) [POST]
+  Parameters: {"authenticity_token"=>"n0915dZB3U6igEglzg16cKfXIp6tkGaS/gB/LEJhE2Q="}
+  [4;35;1mCurso Load (0.2ms)[0m   [0mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;36;1mParticipante Load (2.2ms)[0m   [0;1mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;35;1mInscricao Load (0.4ms)[0m   [0mSELECT * FROM `inscricaos` [0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;35;1mInscricao Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `inscricaos`[0m
+  [4;36;1mInscricao Load (2.4ms)[0m   [0;1mSELECT * FROM `inscricaos` WHERE (`inscricaos`.`participante_id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/cadastral
+Rendering inscricaos/new
+  [4;35;1mParticipante Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `participantes`[0m
+  [4;36;1mCurso Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `cursos`[0m
+  [4;35;1mCurso Load (0.4ms)[0m   [0mSELECT `cursos`.id FROM `cursos` INNER JOIN `cursos_inscricaos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (`cursos`.`id` = 4) AND (`cursos_inscricaos`.inscricao_id = NULL ) LIMIT 1[0m
+  [4;36;1mCurso Load (0.3ms)[0m   [0;1mSELECT `cursos`.id FROM `cursos` INNER JOIN `cursos_inscricaos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (`cursos`.`id` = 5) AND (`cursos_inscricaos`.inscricao_id = NULL ) LIMIT 1[0m
+  [4;35;1mCurso Load (0.3ms)[0m   [0mSELECT `cursos`.id FROM `cursos` INNER JOIN `cursos_inscricaos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (`cursos`.`id` = 6) AND (`cursos_inscricaos`.inscricao_id = NULL ) LIMIT 1[0m
+  [4;36;1mCurso Load (0.3ms)[0m   [0;1mSELECT `cursos`.id FROM `cursos` INNER JOIN `cursos_inscricaos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (`cursos`.`id` = 3) AND (`cursos_inscricaos`.inscricao_id = NULL ) LIMIT 1[0m
+  [4;35;1mCurso Load (0.3ms)[0m   [0mSELECT `cursos`.id FROM `cursos` INNER JOIN `cursos_inscricaos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (`cursos`.`id` = 2) AND (`cursos_inscricaos`.inscricao_id = NULL ) LIMIT 1[0m
+  [4;36;1mCurso Load (4.0ms)[0m   [0;1mSELECT `cursos`.id FROM `cursos` INNER JOIN `cursos_inscricaos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (`cursos`.`id` = 1) AND (`cursos_inscricaos`.inscricao_id = NULL ) LIMIT 1[0m
+Rendered inscricaos/_form (254.9ms)
+Completed in 405ms (View: 265, DB: 18) | 200 OK [http://localhost/inscricaos/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#sel_participa (for 127.0.0.1 at 2012-08-17 14:56:04) [POST]
+  Parameters: {"authenticity_token"=>"n0915dZB3U6igEglzg16cKfXIp6tkGaS/gB/LEJhE2Q=", "inscricao_participante_id"=>"1081"}
+  [4;35;1mCurso Load (0.2ms)[0m   [0mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;36;1mParticipante Load (1.6ms)[0m   [0;1mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;35;1mInscricao Load (0.2ms)[0m   [0mSELECT * FROM `inscricaos` [0m
+  [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;35;1mParticipante Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `participantes`[0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1081) [0m
+Rendered inscricaos/_exibe_participante (7.2ms)
+Completed in 107ms (View: 10, DB: 4) | 200 OK [http://localhost/inscricaos/sel_participa]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#create (for 127.0.0.1 at 2012-08-17 14:56:09) [POST]
+  Parameters: {"inscricao"=>{"participante_id"=>"1081", "curso_ids"=>["3", "2", "1"]}, "authenticity_token"=>"n0915dZB3U6igEglzg16cKfXIp6tkGaS/gB/LEJhE2Q=", "commit"=>"Confirmar"}
+  [4;35;1mCurso Load (0.2ms)[0m   [0mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;36;1mParticipante Load (2.3ms)[0m   [0;1mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;35;1mInscricao Load (0.2ms)[0m   [0mSELECT * FROM `inscricaos` [0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;35;1mInscricao Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `inscricaos`[0m
+  [4;36;1mCurso Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `cursos`[0m
+  [4;35;1mCurso Load (0.4ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` IN (3,2,1)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCurso Load (0.4ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 3) [0m
+  [4;36;1mCurso Load (0.3ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 2) [0m
+  [4;35;1mCurso Load (0.3ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 1) [0m
+  [4;36;1mInscricao Load (0.2ms)[0m   [0;1mSELECT `inscricaos`.id FROM `inscricaos` WHERE (`inscricaos`.`participante_id` = 1081) LIMIT 1[0m
+  [4;35;1mInscricao Create (0.3ms)[0m   [0mINSERT INTO `inscricaos` (`created_at`, `data_inscricao`, `participante_id`, `updated_at`) VALUES('2012-08-17 17:56:10', '2012-08-17 14:56:10', 1081, '2012-08-17 17:56:10')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mdescribe `cursos_inscricaos`[0m
+  [4;35;1mcursos_inscricaos Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `cursos_inscricaos`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO `cursos_inscricaos` (`inscricao_id`, `curso_id`) VALUES (9, 3)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `cursos_inscricaos`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO `cursos_inscricaos` (`inscricao_id`, `curso_id`) VALUES (9, 2)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `cursos_inscricaos`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO `cursos_inscricaos` (`inscricao_id`, `curso_id`) VALUES (9, 1)[0m
+  [4;35;1mSQL (54.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mCurso Load (0.4ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 3) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mCurso Update (0.4ms)[0m   [0;1mUPDATE `cursos` SET `updated_at` = '2012-08-17 17:56:10', `vagas_disponiveis` = 31 WHERE `id` = 3[0m
+  [4;35;1mSQL (43.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mCurso Load (0.4ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 2) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mCurso Update (0.3ms)[0m   [0;1mUPDATE `cursos` SET `updated_at` = '2012-08-17 17:56:10', `vagas_disponiveis` = 31 WHERE `id` = 2[0m
+  [4;35;1mSQL (43.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mCurso Load (0.4ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mCurso Update (0.3ms)[0m   [0;1mUPDATE `cursos` SET `updated_at` = '2012-08-17 17:56:10', `vagas_disponiveis` = 3 WHERE `id` = 1[0m
+  [4;35;1mSQL (43.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mParticipante Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `participantes`[0m
+  [4;35;1mParticipante Load (0.2ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1081) [0m
+Sent mail to corujao83@hotmail.com
+
+Date: Fri, 17 Aug 2012 14:56:10 -0300
+From: informatica@seducpma.com
+To: corujao83@hotmail.com
+Subject: Texto
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+
+<p>
+<h1>Parabéns ALEXANDRE SOARES</h1>
+<b>Sua inscrição nos modulos de treinamento foi efetuada com sucesso.</b>
+<b>Inscricao nº: 9</b><br/>
+<b>
+  Você esta inscrito nos seguintes módulos
+  <ul>
+    
+        <li>Curso de iniciação teatral 1º etapa   2º semestre/2012</li>
+    
+        <li>ESTUDO DO MEIO: VISITAÇÃO A MUSEUS</li>
+    
+        <li>IDENTIFICANDO E ATENDENDO O ALUNO COM DEFICIÊNCIA INTELECTUAL EM SUAS NECESSIDADES</li>
+    
+  </ul>
+
+  <h2>Agradecemos por sua inscrição</h2>
+  <h2>Equipe de Formação - SEDUC</h2>
+  <h2>Prefeitura de Americana</h2>
+</b>
+</p>
+Redirected to http://localhost:3001/inscricaos/9
+Completed in 5119ms (DB: 200) | 302 Found [http://localhost/inscricaos]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#show (for 127.0.0.1 at 2012-08-17 14:56:15) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mCurso Load (0.7ms)[0m   [0;1mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;35;1mParticipante Load (2.2ms)[0m   [0mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;36;1mInscricao Load (0.4ms)[0m   [0;1mSELECT * FROM `inscricaos` [0m
+  [4;35;1mUnidade Load (0.2ms)[0m   [0mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;36;1mInscricao Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `inscricaos`[0m
+  [4;35;1mInscricao Load (0.4ms)[0m   [0mSELECT * FROM `inscricaos` WHERE (`inscricaos`.`id` = 9) [0m
+Rendering template within layouts/cadastral
+Rendering inscricaos/show
+  [4;36;1mParticipante Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `participantes`[0m
+  [4;35;1mParticipante Load (0.2ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1081) [0m
+  [4;36;1mcursos_inscricaos Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `cursos_inscricaos`[0m
+  [4;35;1mCurso Load (0.5ms)[0m   [0mSELECT * FROM `cursos` INNER JOIN `cursos_inscricaos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (`cursos_inscricaos`.inscricao_id = 9 ) [0m
+  [4;36;1mCurso Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `cursos`[0m
+Completed in 175ms (View: 38, DB: 11) | 200 OK [http://localhost/inscricaos/9]
