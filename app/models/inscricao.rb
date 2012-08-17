@@ -32,10 +32,12 @@ class Inscricao < ActiveRecord::Base
     cursos = self.cursos
     cursos.each do |curso|
       course = Curso.find(curso)
-      if course.vagas_disponiveis > 0
-        course.vagas_disponiveis = course.vagas_disponiveis - 1
-      end
-      course.save
+      if course.vagas_disponiveis.to_i > 0
+        b = course.vagas_disponiveis.to_i
+        c = b - 1
+        course.vagas_disponiveis = c
+         t = course.save!
+      end      
     end
   end
 end

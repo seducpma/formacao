@@ -6,7 +6,7 @@ class Curso < ActiveRecord::Base
    validates_presence_of :ministrante, :message => ' ==> PREENCHER DE DADOS OBRIGATÓRIO <=='
   
 
-  def before_save
+  def before_create
     self.vagas_disponiveis = self.qtde
     if self.nome.present?
       self.nome.upcase
