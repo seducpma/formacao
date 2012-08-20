@@ -79,11 +79,16 @@ class InscricaosController < ApplicationController
     @inscricao = Inscricao.find_by_participante_id(params[:inscricao_participante_id])
     render :update do |page|
       page.replace_html "informacoes", :partial => 'exibe_participante'
-      if @dadosparticipa.possuidadosobrigatorios?
-        page.replace_html "final", :text => "<input id='inscricao_submit' type='submit' value='Confirmar' name='commit'>"
+      unless @inscricao.present?
+        if @dadosparticipa.possuidadosobrigatorios?
+          page.replace_html "final", :text => "<input id='inscricao_submit' type='submit' value='Confirmar' name='commit'>"
+        else
+          page.replace_html "final", :text => "<a href='/participantes/#{params[:inscricao_participante_id]}/addemail'>Favor atualizar dados</a>"
+        end
       else
-        page.replace_html "final", :text => "<a href='/participantes/#{params[:inscricao_participante_id]}/addemail'>Favor atualizar dados</a>"
+        page.replace_html "final", :text => "<a href='/inscricaos/#{@inscricao.id}'>Inscrição já efetuada - visualize</a>"
       end
+
     end
   end
   # POST /inscricaos
