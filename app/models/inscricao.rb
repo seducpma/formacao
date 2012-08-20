@@ -28,6 +28,7 @@ class Inscricao < ActiveRecord::Base
 
   end
 
+
   def valida_vaga
     cursos = self.cursos
     cursos.each do |curso|

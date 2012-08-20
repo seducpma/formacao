@@ -19,4 +19,13 @@ class Curso < ActiveRecord::Base
     end
   end
 
+  def existe_vaga
+    
+    if self.vagas_disponiveis == 0
+      false
+    else
+      true
+    end
+  end
+
 end

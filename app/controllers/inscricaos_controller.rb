@@ -6,7 +6,7 @@ class InscricaosController < ApplicationController
     before_filter :load_inscricaos
     before_filter :load_locais
     
-    layout :define
+  layout :define
 
   def envia_email
   end
