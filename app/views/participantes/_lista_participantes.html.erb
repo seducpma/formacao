@@ -11,10 +11,6 @@
                   <b><%=h curso.nome %></b>
                 </td>
               </tr>
-            <tr>
-              <td><%=h "Opção1: #{Unidade.find(@inscricao.opcao1).nome} - #{@inscricao.periodo_opcao1}" %></td>
-              <td><%=h "Opção2: #{Unidade.find(@inscricao.opcao2).nome} - #{@inscricao.periodo_opcao2}" %></td>
-            </tr>
           <% end %>
        <%end%>
  </table>
