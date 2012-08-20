@@ -97,8 +97,9 @@ class InscricaosController < ApplicationController
     @inscricao = Inscricao.new(params[:inscricao])
     @inscricao.data_inscricao = Time.now
     respond_to do |format|
-      @inscricao.valida_vaga
+
       if @inscricao.save
+        @inscricao.valida_vaga
         flash[:notice] = 'INSCRIÇÃO CONFIRMADA COM SUCESSO.'
         InscricaoMailer.deliver_confirmacao_inscricao(@inscricao,@inscricao.participante)
         format.html { redirect_to(@inscricao) }
