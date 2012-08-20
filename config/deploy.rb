@@ -22,7 +22,7 @@ after "deploy:symlink", "deploy:update_crontab"
    task :custom_symlinks do
      run "rm -rf #{release_path}/config/database.yml"
      run "ln -s #{shared_path}/database.yml #{release_path}/config/database.yml"
-#     run "ln -s #{shared_path}/503.html #{release_path}/public/503.html"
+     run "ln -s #{shared_path}/503.html #{release_path}/public/503.html"
    end
 
    desc "Update the crontab file"

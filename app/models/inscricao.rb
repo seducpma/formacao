@@ -22,7 +22,6 @@ class Inscricao < ActiveRecord::Base
       course.vagas_disponiveis <= 0 ? false : true
       if course.vagas_disponiveis <= 0 ? true : false
         errors.add(:vagas,"Vagas indisponíveispara o curso #{course.nome_curto}")
-        p = 0
       end
     end
 
