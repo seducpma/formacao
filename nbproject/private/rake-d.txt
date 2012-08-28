@@ -47,6 +47,7 @@ doc\:guides=
 doc\:plugins=
 doc\:plugins\:brazilian-rails=
 doc\:plugins\:jrails=
+doc\:plugins\:prawnto=
 doc\:plugins\:restful-authentication=
 doc\:plugins\:role_requirement=
 doc\:rails=

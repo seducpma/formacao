@@ -8,7 +8,7 @@ class Inscricao < ActiveRecord::Base
   accepts_nested_attributes_for :participante
   validates_presence_of :participante_id
   validates_uniqueness_of :participante_id, :message => " Error => Este participante já efetuou a inscrição"
-  attr_accessor :vagas
+  attr_accessor :vagas, :curso
   Periodo = %w(Matutino Vespertino Noturno Sabado_Matutino)
 
 
@@ -34,10 +34,8 @@ class Inscricao < ActiveRecord::Base
     cursos.each do |curso|
       course = Curso.find(curso)
       if course.vagas_disponiveis.to_i > 0
-        b = course.vagas_disponiveis.to_i
-        c = b - 1
-        course.vagas_disponiveis = c
-         t = course.save!
+        course.vagas_disponiveis = course.vagas_disponiveis.to_i - 1
+        t = course.save!
       end      
     end
   end

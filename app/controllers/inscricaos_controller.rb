@@ -142,6 +142,34 @@ class InscricaosController < ApplicationController
     end
   end
 
+ def gera_pdf
+   @search = Curso.find(params[:curso])
+    respond_to do |format|
+      format.html {render(:layout => false)} ## index.html.erb
+      format.pdf do
+        #send_data CursosDrawer.draw(@search), :filename => "#{@search.nome_curto}.pdf", :type => 'application/pdf', :disposition => 'inline'
+        html = render_to_string(:layout => 'false' , :action => "gera_pdf.erb")
+        kit = PDFKit.new(html)
+        kit.stylesheets << "#{Rails.root}/public/stylesheets/pdf.css"
+        send_data(kit.to_pdf, :filename => "#{@search}.pdf", :type => 'application/pdf')
+        #pdf = PDF::Writer.new
+        #send_data pdf.render, :filename => "#{@search}.pdf", :type => 'application/pdf'
+        #send_data CursosDrawer.draw(@search), :filename => "#{@search}.pdf",:type => 'application/pdf'
+      end
+    end
+
+
+
+ end
+
+ def listagem
+   if params[:curso].present?
+     @search = Curso.find(params[:curso][:get])
+     @cursos_inscricaos = Inscricao.paginate(:all, {:page => params[:page],:per_page => 10, :include => 'cursos',:conditions => [ 'cursos.id =?', @search.id ]})
+     p = 0
+   end
+
+ end
 
  def por_curso
    @search = Inscricao.search(params[:search])

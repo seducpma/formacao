@@ -6,9 +6,9 @@
 
 # Specifies gem version of Rails to use when vendor/rails is not present
 RAILS_GEM_VERSION = '2.3.5' unless defined? RAILS_GEM_VERSION
-
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
+require 'pdfkit'
 
 Rails::Initializer.run do |config|
   # Settings in config/environments/* take precedence over those specified here.
@@ -30,6 +30,8 @@ Rails::Initializer.run do |config|
   config.gem "will_paginate", :version => '2.3.15'
   config.gem 'whenever', :lib => false
   config.gem "searchlogic", :version => "2.4.14"
+  config.gem "pdfkit"
+  
   #config.gem "capistrano", :version => "2.5.18"
   # Only load the plugins named here, in the order given. By default, all plugins 
   # in vendor/plugins are loaded in alphabetical order.
@@ -77,6 +79,7 @@ Rails::Initializer.run do |config|
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
   config.i18n.default_locale = "pt-BR"
 end
+require 'pdf/writer'
 WillPaginate::ViewHelpers.pagination_options[:previous_label]=I18n.t("pagination.prev")
 WillPaginate::ViewHelpers.pagination_options[:next_label]=I18n.t("pagination.next")
 
