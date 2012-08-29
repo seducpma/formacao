@@ -166,7 +166,6 @@ class InscricaosController < ApplicationController
    if params[:curso].present?
      @search = Curso.find(params[:curso][:get])
      @cursos_inscricaos = Inscricao.paginate(:all, {:page => params[:page],:per_page => 10, :include => 'cursos',:conditions => [ 'cursos.id =?', @search.id ]})
-     p = 0
    end
 
  end
@@ -215,7 +214,7 @@ protected
   end
 
   def load_cursos
-    @cursos = Curso.find(:all, :order => 'nome ASC')
+    @cursos = Curso.find(:all, :order => 'nome ASC', :conditions => ['status = 0'])
   end
 
 

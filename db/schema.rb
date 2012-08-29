@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120815130827) do
+ActiveRecord::Schema.define(:version => 20120829145711) do
 
   create_table "cursos", :force => true do |t|
     t.string   "nome_curto"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(:version => 20120815130827) do
     t.datetime "updated_at"
     t.integer  "qtde"
     t.integer  "vagas_disponiveis"
+    t.boolean  "status",            :default => false
   end
 
   create_table "cursos_inscricaos", :id => false, :force => true do |t|
