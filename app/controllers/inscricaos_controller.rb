@@ -13,7 +13,7 @@ class InscricaosController < ApplicationController
 
   def confirmacao
     participante = Participante.find_by_matricula(params[:matricula])
-    @inscricao = Inscricao.find_by_participante_id(participante.id)
+    @inscricao = Inscricao.find_by_participante_id(participante_id)
     InscricaoMailer.deliver_confirmacao_inscricao(@inscricao,@inscricao.participante)
 
   end
@@ -76,7 +76,7 @@ class InscricaosController < ApplicationController
 
   def sel_participa
     @dadosparticipa = Participante.find(params[:inscricao_participante_id])
-    @inscricao = Inscricao.find_by_participante_id(params[:inscricao_participante_id])
+    @inscricao = Inscricao.find_by_participante_id(params[:inscricao_participante_id], :conditions => ['status = 1'])
     render :update do |page|
       page.replace_html "informacoes", :partial => 'exibe_participante'
       unless @inscricao.present?

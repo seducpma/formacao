@@ -79,7 +79,7 @@ Rails::Initializer.run do |config|
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
   config.i18n.default_locale = "pt-BR"
 end
-require 'pdf/writer'
+#require 'pdf/writer'
 WillPaginate::ViewHelpers.pagination_options[:previous_label]=I18n.t("pagination.prev")
 WillPaginate::ViewHelpers.pagination_options[:next_label]=I18n.t("pagination.next")
 
@@ -90,6 +90,6 @@ ActionMailer::Base.smtp_settings = {
    :address => "smtp.gmail.com",
    :port => 587,
    :authentication => :plain,
-   :user_name => "administrador@seducpma.com", #Você pode usar o Google Apps!
-   :password => 'infoseducpma'
+   :user_name => "no-reply@seducpma.com", #Você pode usar o Google Apps!
+   :password => 'informaticapma'
 }
