@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120829145711) do
+ActiveRecord::Schema.define(:version => 20120831123045) do
 
   create_table "cursos", :force => true do |t|
     t.string   "nome_curto"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20120829145711) do
     t.date     "data_inscricao"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "status"
   end
 
   create_table "participantes", :force => true do |t|

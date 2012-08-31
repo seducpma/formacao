@@ -7,12 +7,17 @@ class Inscricao < ActiveRecord::Base
   has_and_belongs_to_many :cursos
   accepts_nested_attributes_for :participante
   validates_presence_of :participante_id
-  validates_uniqueness_of :participante_id, :message => " Error => Este participante já efetuou a inscrição"
+  #validates_uniqueness_of :participante_id, :message => " Error => Este participante já efetuou a inscrição"
   attr_accessor :vagas, :curso
   Periodo = %w(Matutino Vespertino Noturno Sabado_Matutino)
+  before_save :ativa_inscricao
 
-
-
+  def ativa_inscricao
+     #status
+     #0 - Inscricao finalizada
+     #1 - Inscricao em andamento
+     self.status = 1
+  end
 
   def existe_vaga?
     cursos = self.cursos
